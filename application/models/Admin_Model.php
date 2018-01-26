@@ -34,4 +34,25 @@ class Admin_Model extends CI_Model {
 		$this->db->where('id_customer', $id_customer);
 		$this->db->delete('customer');
 	}
+
+	public function view_id_customer($id_customer){
+		$this->db->where('id_customer', $id_customer);
+		return $this->db->get('customer')->row();
+	}
+
+	public function edit_customer($id_customer){
+		$data=array(
+			'name' => $this->input->post('name'),
+			'address' => $this->input->post('address'),
+			'phone' => $this->input->post('phone'),
+			'gender' => $this->input->post('gender')
+		);
+		$this->db->where('id_customer', $id_customer);
+		$this->db->update('customer', $data);
+	}
+
+	public function search_customer($nama){
+		$this->db->like('name', $nama);
+		return $this->db->get('customer')->result();
+	}
 }

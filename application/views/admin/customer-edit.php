@@ -14,33 +14,13 @@
     </ol>
   </section>
   <section class="content">
-   <?php 
-  // cek buat user terbesar
-   $usr = $customer->id_customer;
-   $newus = substr($usr,1,4);
-
-   $tambah=$newus+1;
-   if ($tambah<10) {
-    $id="C000".$tambah;
-  }
-  elseif ($tambah<100) {
-    $id="C00".$tambah;
-  }
-  else if($tambah<1000){
-    $id="C0".$tambah;
-  }
-  else{
-    $id="C".$tambah;
-  }
-
-  ?>
   <div class="box box-danger">
     <div class="box-header">
       <h3 class="box-title">Tambah Customer</h3>
     </div>
     <div class="box-body">
-      <?php echo form_open('Admin/tambah'); ?>
-      <input type="hidden" name="id_customer" value="<?php echo($id); ?>">
+      <?php echo form_open('Admin/edit_customer/'.$customer->id_customer); ?>
+      <input type="hidden" name="id_customer" value="<?php echo($customer->id_customer ); ?>">
       <!-- Date dd/mm/yyyy -->
       <div class="form-group">
         <label>Nama:</label>
@@ -49,7 +29,7 @@
           <div class="input-group-addon">
             <i class="fa fa-file"></i>
           </div>
-          <input type="text" name="name" class="form-control">
+          <input type="text" name="name" class="form-control" value="<?php echo $customer->name; ?>">
         </div>
         <!-- /.input group -->
       </div>
@@ -60,6 +40,7 @@
             <i class="fa fa-user"></i>
           </div>
           <select name="gender" class="form-control">
+            <option value="<?php echo $customer->gender; ?>"><?php echo $customer->gender; ?></option>
             <option value="laki-laki">Laki-Laki</option>
             <option value="perempuan">Perempuan</option>
           </select>
@@ -74,7 +55,7 @@
           <div class="input-group-addon">
             <i class="fa fa-phone"></i>
           </div>
-          <input name="phone" type="text" class="form-control">
+          <input name="phone" type="text" class="form-control" value="<?php echo $customer->phone; ?>">
         </div>
         <!-- /.input group -->
       </div>
@@ -85,7 +66,7 @@
           <div class="input-group-addon">
             <i class="fa fa-map"></i>
           </div>
-          <textarea name="address" class="form-control"></textarea>
+          <textarea name="address" class="form-control"><?php echo $customer->address; ?></textarea>
         </div>
       </div>
       <input type="submit" name="submit" class="btn btn-success">

@@ -33,19 +33,30 @@
     </ol>
   </section>
   <section class="content">
+    <section class="content-header">
+      <!-- <h1>Dashboard</h1> -->
+      <div class="row">
+        <div class="col-sm-2 col-md-2">
+          <a href="<?php echo base_url('admin/index') ?>"><button type="button" class="btn btn-primary top_button"><span class="glyphicon glyphicon-plus"></span> </button></a>
+        </div>
+      </div>
+    </section>
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
           <h3 class="box-title">Responsive Hover Table</h3>
 
           <div class="box-tools">
+            <form action="<?php echo base_url('Admin/search_customer') ?>" method="get" accept-charset="utf-8">
             <div class="input-group input-group-sm" style="width: 150px;">
-              <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+              
+              <input type="text" name="search-customer" class="form-control pull-right" placeholder="Search">
 
               <div class="input-group-btn">
                 <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
               </div>
             </div>
+            </form>
           </div>
         </div>
         <!-- /.box-header -->
@@ -66,7 +77,7 @@
               <td><?php echo $data->address ?></td>
               <td><?php echo $data->phone ?></td>
               <td><?php echo $data->gender ?></td>
-              <td>edit</td>
+              <td><a href="<?php echo base_url('/Admin/edit_customer/').$data->id_customer; ?>">Edit</a></td>
               <td><a href="<?php echo base_url('/Admin/hapus_customer/').$data->id_customer; ?>">Hapus</a></td>
             </tr>
             <?php } ?>

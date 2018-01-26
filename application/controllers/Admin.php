@@ -85,4 +85,26 @@ class Admin extends CI_Controller {
 		$this->Admin_Model->hapus_customer($id_customer);
 		redirect('Admin/customer','refresh');
 	}
+
+	public function edit_customer($id_customer){
+		if ($this->input->post('submit')) {
+			$this->Admin_Model->edit_customer($id_customer);
+			$this->session->set_flashdata('success_msg', 'Berhasil Di Tambah');
+			redirect('Admin/Customer','refresh');
+		}
+		$data['customer'] = $this->Admin_Model->view_id_customer($id_customer);
+		$this->load->view('/template/header');
+		$this->load->view('/template/sidebar');
+		$this->load->view('/admin/customer-edit',$data);
+		$this->load->view('/template/footer');
+	}
+
+	public function search_customer(){
+		$nama = $this->input->get('search-customer');
+		$data['customer'] = $this->Admin_Model->search_customer($nama);
+		$this->load->view('/template/header');
+		$this->load->view('/template/sidebar');
+		$this->load->view('admin/customer', $data);
+		$this->load->view('/template/footer');
+	}
 }
