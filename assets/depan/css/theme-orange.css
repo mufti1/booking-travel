@@ -1,0 +1,161 @@
+/*ORANGE THEME*/
+body,
+.main {background-image:url(../images/backgrounds/retina_wood.png);}
+
+::-moz-selection {background:#F26B09;color:#fff;}
+::selection 	 	{background:#F26B09;color:#fff;}
+
+/*HEADER*/
+.logo		{background:url(../images/themes/orange/txt/logo.png) 0 15px no-repeat;width:224px;height:50px;display:inline-block;}
+.logo a 		{float:left;display:block;width:100%;height:100%;}
+.logo img 	{display:none;}
+
+.contact 		{background:url(../images/themes/orange/ico/icons.png) 0 1px no-repeat;}
+header .ribbon 	{background-image:url(../images/themes/orange/bgr/ribbon-long.png);}
+.ribbon li		{border-color:#F26B09;}
+.ribbon li a:hover {color:#EE5F00;}
+.ribbon ul.open	{background:#FF8204;}
+
+/*HEADINGS*/
+h1	{color:#666;}
+h2,
+.info h2,
+.room-types h2,
+.error-type h1,
+.turqouise-link    	{color:#F26B09;}
+
+em,
+.main-search h4 span,
+aside article h3,
+.flights .details h5,
+.error-type,
+.booking h3 span   	{color:#F77515;}
+
+/*BUTTONS*/
+.gradient-button,.lb-wrap  {
+background: rgb(255,145,38);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmOTEyNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMjZiMDkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+) ;
+background: -moz-linear-gradient(top, rgba(255,145,38,1) 0%, rgba(242,107,9,1) 100%) ;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,145,38,1)), color-stop(100%,rgba(242,107,9,1))) ;
+background: -webkit-linear-gradient(top, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+background: -o-linear-gradient(top, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+background: -ms-linear-gradient(top, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+background: linear-gradient(to bottom, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9126', endColorstr='#f26b09',GradientType=0 ) ;
+}
+
+.gradient-button:hover{
+background: rgb(242,107,9);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YyNmIwOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZjkxMjYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+) ;
+background: -moz-linear-gradient(top, rgba(242,107,9,1) 0%, rgba(255,145,38,1) 100%) ;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,107,9,1)), color-stop(100%,rgba(255,145,38,1))) ;
+background: -webkit-linear-gradient(top, rgba(242,107,9,1) 0%,rgba(255,145,38,1) 100%) ;
+background: -o-linear-gradient(top, rgba(242,107,9,1) 0%,rgba(255,145,38,1) 100%) ;
+background: -ms-linear-gradient(top, rgba(242,107,9,1) 0%,rgba(255,145,38,1) 100%) ;
+background: linear-gradient(to bottom, rgba(242,107,9,1) 0%,rgba(255,145,38,1) 100%) ;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f26b09', endColorstr='#ff9126',GradientType=0 ) ;
+}
+
+.destinations .ribbon:hover,
+.locations .ribbon:hover  			{background:url(../images/themes/orange/bgr/ribbons.png) 0 0 no-repeat ;}
+.locations .full-width .ribbon:hover	{background:url(../images/themes/orange/bgr/ribbons.png) -62px -57px no-repeat ;}
+
+.search-submit 	{background-image:url(../images/themes/orange/bgr/search-button.png);}
+.inner-nav li.active,
+.inner-nav li.active:hover {background-image:url(../images/themes/orange/bgr/inner-nav-active.png);}
+.ui-slider-horizontal .ui-slider-handle 	{background-image:url(../images/themes/orange/ico/ui-slider-handle.png);}
+
+.pager .current,
+.pager a:hover	{background:#F26B09;}
+
+.scroll-to-top 	{background-image:url(../images/themes/orange/bgr/top-button.png);}
+
+/*CONTENT*/
+.deals .description a  {color:#F26B09;}
+
+.testimonials,
+.inner-nav li:hover {
+background: rgb(255,145,38);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmOTEyNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMjZiMDkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+) ;
+background: -moz-linear-gradient(top, rgba(255,145,38,1) 0%, rgba(242,107,9,1) 100%) ;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,145,38,1)), color-stop(100%,rgba(242,107,9,1))) ;
+background: -webkit-linear-gradient(top, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+background: -o-linear-gradient(top, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+background: -ms-linear-gradient(top, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+background: linear-gradient(to bottom, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9126', endColorstr='#f26b09',GradientType=0 ) ;
+}
+
+.room-types .image-overlay {background-image:url(../images/themes/orange/ico/magnify.png);}
+.gmap .infoBox		{background-image:url(../images/themes/orange/bgr/map-popup-hotel.png);}
+.score .achieved		{color:#F77515;}
+.chart dd span		{background:#FF9126;}
+.reviews .pro		{background-image:url(../images/themes/orange/ico/plus.png);}
+.tags li a:hover		{background-color:#FF9126;}
+.get_inspired li:hover figcaption,
+.view-type li:hover, 
+.view-type li.active	{background:#FF9126;}
+
+.map-wrap .infoBox	{background:url(../images/themes/orange/bgr/map-popup.png) no-repeat !important;}
+
+.phone-green 	{background:url(../images/themes/orange/ico/phone-orange.jpg) 2px 0 no-repeat;}	
+.email-green 	{background:url(../images/themes/orange/ico/email-orange.jpg) 0 5px no-repeat;}
+
+.breadcrumbs,
+.bottom-nav,
+.separator,
+.offers,
+.destinations {background-image:url(../images/themes/orange/bgr/separator.jpg);}
+
+.lb-wrap .close 				{background:#FF9126;}
+.lb-wrap input 				{border-color: #F26B09;}
+.lb-wrap label,
+.lb-wrap p					{color:#333;}
+.lb-wrap .gradient-button 	{color:#F26B09;}
+
+.entry-header a:hover	{color:#F26B09;}
+
+/*FOOTER*/
+footer article li {background-image:url(../images/themes/orange/ico/bullet-orange-3x3.jpg);}
+.social li:hover	{background:url(../images/themes/orange/ico/icons.png) 0 -50px no-repeat;}
+
+/*FORM ELEMENTS*/
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+textarea:focus 	{border-color:#F26B09;}
+
+/*DATEPICKER*/
+.ui-datepicker th {
+background: rgb(255,145,38);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmOTEyNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMjZiMDkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+) ;
+background: -moz-linear-gradient(top, rgba(255,145,38,1) 0%, rgba(242,107,9,1) 100%) ;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,145,38,1)), color-stop(100%,rgba(242,107,9,1))) ;
+background: -webkit-linear-gradient(top, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+background: -o-linear-gradient(top, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+background: -ms-linear-gradient(top, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+background: linear-gradient(to bottom, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9126', endColorstr='#f26b09',GradientType=0 ) ;
+border-color:#F26B09;
+}
+
+.ui-datepicker .ui-datepicker-today,
+.ui-datepicker .ui-datepicker-calendar .ui-state-hover {
+background: rgb(255,145,38);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmOTEyNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMjZiMDkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+) ;
+background: -moz-linear-gradient(top, rgba(255,145,38,1) 0%, rgba(242,107,9,1) 100%) ;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,145,38,1)), color-stop(100%,rgba(242,107,9,1))) ;
+background: -webkit-linear-gradient(top, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+background: -o-linear-gradient(top, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+background: -ms-linear-gradient(top, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+background: linear-gradient(to bottom, rgba(255,145,38,1) 0%,rgba(242,107,9,1) 100%) ;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9126', endColorstr='#f26b09',GradientType=0 ) ;
+}
+
+@media screen and (max-width: 1024px) {
+.destinations .ribbon:focus,
+.destinations .ribbon:hover,
+.locations .one-fourth  .ribbon:focus,
+.locations .one-fourth  .ribbon:hover {background:#FF9126;}
+}

@@ -1,0 +1,14 @@
+.flight{
+	/*background: url('../img/IMGL0457.JPG');*/
+	background: url('../img/car-1.jpg');
+	background-size: cover;
+	height: 637px;
+}
+.travel-sist{
+	margin-top: 130px;
+	text-align: center;
+	color: #ecf0f1;
+}
+.forem-control{
+	width: 100% !important;
+}
