@@ -13,6 +13,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('/assets/depan/'); ?>css/theme-pink.css">
 	<link rel="stylesheet" href="<?php echo base_url('/assets/'); ?>css/style.css" type="text/css"/>
 	<link rel="stylesheet" href="<?php echo base_url('/assets/depan/'); ?>css/prettyPhoto.css" type="text/css" media="screen" />
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="<?php echo base_url('/assets/adminlte/'); ?>bower_components/font-awesome/css/font-awesome.min.css">
 	<link rel="shortcut icon" href="<?php echo base_url('/assets/depan/'); ?>images/favicon.ico" />
 	<script type="text/javascript" src="<?php echo base_url('/assets/depan/'); ?>js/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url('/assets/depan/'); ?>js/jquery-ui.min.js"></script>
@@ -33,3 +35,48 @@
 	</script>
 </head>
 <body>
+	<!--header-->
+	<header>
+		<div class="wrap clearfix">
+			<!--logo-->
+			<h1 class="logo"><a href="index.html" title="TravelSist - beranda"><img src="<?php echo base_url('/assets/depan/'); ?>images/txt/logo.png" alt="Book Your Travel" /></a></h1>
+			<!--//logo-->
+
+			<!--ribbon-->
+			<div class="ribbon">
+				<nav>
+					<ul class="profile-nav">
+						<li class="active"><a href="#" title="My Account">My Account</a></li>
+						<li><a href="login.html" title="Login">Login</a></li>
+						<li><a href="my_account.html" title="Settings">Settings</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!--//ribbon-->
+
+			<!--search-->
+			<div class="search">
+				<form id="search-form" method="get" action="search-form">
+					<input type="search" placeholder="Search entire site here" name="site_search" id="site_search" /> 
+					<input type="submit" id="submit-site-search" value="submit-site-search" name="submit-site-search"/>
+				</form>
+			</div>
+			<!--//search-->
+
+			<!--contact-->
+			<div class="contact">
+				<span>24/7 Support number</span>
+				<span class="number">1- 555 - 555 - 555</span>
+			</div>
+			<!--//contact-->
+		</div>
+
+		<!--main navigation-->
+		<nav class="main-nav" role="navigation" id="nav">
+			<ul class="wrap">
+				<li class="active"><a href="flights.html" title="Flights">Flights</a></li>
+			</ul>
+		</nav>
+		<!--//main navigation-->
+	</header>
+	<!--//header-->

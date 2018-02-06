@@ -39,4 +39,38 @@
 			$this->db->join('transportation', 'rute.id_transportation = transportation.id_transportation');
 			return $this->db->get()->row();
 		}
+
+		function booking(){
+			for ($i=1; $i <= $this->input->post('penumpang') ; $i++) { 
+				$data=array(
+					'reservation_code' => $this->input->post('reservation_code['.$i.']'),
+					'reservation_at' => $this->input->post('reservation_at['.$i.']'),
+					'reservation_date' => $this->input->post('reservation_date['.$i.']'),
+					'id_customer' => $this->input->post('id_customer['.$i.']'),
+					'id_transportation' => $this->input->post('id_transportation['.$i.']'),
+					'id_rute' => $this->input->post('id_rute['.$i.']'),
+					'depart_at' => $this->input->post('depart_at['.$i.']'),
+					'price' => $this->input->post('price['.$i.']'),
+					'id_user' => $this->input->post('id_user['.$i.']')
+				);
+
+				$this->db->insert('reservation', $data);
+
+				$cust=array(
+					'id_customer' => $this->input->post('id_customer['.$i.']'),
+					'name' => $this->input->post('name['.$i.']'),
+					'address' => $this->input->post('address['.$i.']'),
+					'phone' => $this->input->post('phone['.$i.']'),
+					'gender' => $this->input->post('gender['.$i.']')
+				);
+
+				$this->db->insert('customer', $cust);
+
+			}
+		}
+
+		function kode_cust(){
+			$this->db->select_max('id_customer');
+			return $this->db->get('customer')->row();
+		}
 	}

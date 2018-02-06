@@ -4,7 +4,9 @@ $(document).ready(function () {
 	
 	$('.datepicker-wrap input').datepicker({
 		showOn: 'button',
+		dateFormat: "yy-mm-dd",
 		buttonImage: 'http://localhost/travel/assets/depan/images/ico/calendar.png',
+		
 		buttonImageOnly: true
 	});
 	
@@ -52,19 +54,19 @@ $(document).ready(function () {
 	
 	//TABS
 	$('.tab-content').hide().first().show();
-    $('.inner-nav li:first').addClass("active");
+	$('.inner-nav li:first').addClass("active");
 
-    $('.inner-nav a').on('click', function (e) {
-        e.preventDefault();
-        $(this).closest('li').addClass("active").siblings().removeClass("active");
-        $($(this).attr('href')).show().siblings('.tab-content').hide();
+	$('.inner-nav a').on('click', function (e) {
+		e.preventDefault();
+		$(this).closest('li').addClass("active").siblings().removeClass("active");
+		$($(this).attr('href')).show().siblings('.tab-content').hide();
 		var currentTab = $(this).attr("href");
 		if (currentTab == "#location")
-		initialize();
-    });
+			initialize();
+	});
 
-    var hash = $.trim( window.location.hash );
-    if (hash) $('.inner-nav a[href$="'+hash+'"]').trigger('click');
+	var hash = $.trim( window.location.hash );
+	if (hash) $('.inner-nav a[href$="'+hash+'"]').trigger('click');
 	
 	//CSS
 	$('.top-right-nav li:last-child,.social li:last-child,.twins .f-item:last-child,.ribbon li:last-child,.room-types li:last-child,.three-col li:nth-child(3n),.reviews li:last-child,.three-fourth .deals .one-fourth:nth-child(3n),.full .deals .one-fourth:nth-child(4n),.locations .one-fourth:nth-child(3n),.pager span:last-child,.get_inspired li:nth-child(5n)').addClass('last');
@@ -98,7 +100,7 @@ $(document).ready(function () {
 	
 	// LIST AND GRID VIEW TOGGLE
 	$('.view-type li:first-child').addClass('active');
-		
+
 	$('.grid-view').click(function() {
 		$('.three-fourth article').attr("class", "one-fourth");
 		$('.three-fourth article:nth-child(3n)').addClass("last");
@@ -119,13 +121,13 @@ $(document).ready(function () {
 	
 	//MY ACCOUNT EDIT FIELDS
 	$('.edit_field').hide();
-    $('.edit').on('click', function (e) {
-        e.preventDefault(); 
-        $($(this).attr('href')).toggle('slow', function(){});
-    });
+	$('.edit').on('click', function (e) {
+		e.preventDefault(); 
+		$($(this).attr('href')).toggle('slow', function(){});
+	});
 	$('.edit_field a,.edit_field input[type=submit]').click(function() {
 		$('.edit_field').hide(400);
 	});
 });
-	
+
 
