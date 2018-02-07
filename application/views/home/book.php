@@ -50,7 +50,7 @@
 					<input type="hidden" name="id_transportation[<?php echo $i; ?>]" value="<?php echo $book->id_transportation ?>">
 					<input type="hidden" name="price[<?php echo $i; ?>]" value="<?php echo $book->price ?>">
 					<input type="hidden" name="id_user[<?php echo $i; ?>]" value="<?php echo $id_user ?>">
-					<input type="hidden" name="penumpang[<?php echo $i; ?>]" value="<?php echo $penumpang ?>">
+					<input type="hidden" name="penumpang" value="<?php echo $penumpang ?>">
 					<fieldset>
 						<h3><span><?php echo "0".$i; ?> </span>Isi Data Diri</h3>
 						<div class="row twins">
