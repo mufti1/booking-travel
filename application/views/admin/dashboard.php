@@ -1,5 +1,9 @@
-
-
+<?php 
+  $level = $this->session->userdata('level');
+  if ($level != "muftiganteng") {
+    redirect('/','refresh');
+  }
+?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->

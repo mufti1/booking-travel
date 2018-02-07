@@ -11,7 +11,7 @@
 				<ul class="profile-nav">
 					<li class="active"><a href="#" title="My Account">My Account</a></li>
 					<li><a href="login.html" title="Login">Login</a></li>
-					<li><a href="my_account.html" title="Settings">Settings</a></li>
+					<li><a href="<?php echo base_url('login/logout') ?>" title="Settings">Logout</a></li>
 				</ul>
 			</nav>
 		</div>
