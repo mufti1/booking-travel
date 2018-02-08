@@ -38,6 +38,7 @@
 		public function user_booking(){
 			$data['book'] = $this->Home_Model->view_booking();
 			$data['customer'] = $this->Home_Model->kode_cust();
+			$data['seat'] = $this->Home_Model->view_seat();
 			$data['judul'] = "Booking";
 			$this->load->view('/template/depan_header', $data);
 			$this->load->view('/home/book', $data);

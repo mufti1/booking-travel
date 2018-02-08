@@ -23,7 +23,7 @@
 			$this->db->from('rute');
 			$this->db->where('rute_from', $this->input->get('rute_from'));
 			$this->db->where('rute_to', $this->input->get('rute_to'));
-			$this->db->where('seat_qty >=', $this->input->get('penumpang'));
+			$this->db->where('seat_av >=', $this->input->get('penumpang'));
 			$this->db->like('depart_at', $this->input->get('depart_at'));
 			$this->db->join('transportation', 'rute.id_transportation = transportation.id_transportation');
 			return $this->db->get()->result();
@@ -40,6 +40,13 @@
 			return $this->db->get()->row();
 		}
 
+		function view_seat(){
+			$this->db->select('seat_code');
+			$this->db->from('reservation');
+			$this->db->where('id_rute',  $this->input->get('id_rute'));
+			return $this->db->get()->result();
+		}
+
 		function booking(){
 			for ($i=1; $i <= $this->input->post('penumpang') ; $i++) { 
 				$data=array(
@@ -51,7 +58,8 @@
 					'id_rute' => $this->input->post('id_rute['.$i.']'),
 					'depart_at' => $this->input->post('depart_at['.$i.']'),
 					'price' => $this->input->post('price['.$i.']'),
-					'id_user' => $this->input->post('id_user['.$i.']')
+					'id_user' => $this->input->post('id_user['.$i.']'),
+					'seat_code' => $this->input->post('seat_code['.$i.']')
 				);
 
 				$this->db->insert('reservation', $data);
@@ -65,6 +73,12 @@
 				);
 
 				$this->db->insert('customer', $cust);
+
+				$t=array(
+					'seat_av' => $this->input->post('seat_av')
+				);
+				$this->db->where('id_transportation', $this->input->post('id_t'));
+				$this->db->update('transportation', $t);
 
 			}
 		}

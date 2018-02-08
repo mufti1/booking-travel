@@ -32,6 +32,9 @@
 				else{
 					$id="C".$tambah;
 				} ?>
+				<?php foreach ($seat as $data) {
+					$kursi[] = $data->seat_code;
+				} ?>
 				<?php $penumpang = $this->input->get('penumpang'); $harga = $penumpang * $book->price; for ($i=1; $i <= $penumpang ; $i++) {  ?>
 				<form id="booking" method="post" action="<?php echo base_url('/Home/booking/') ?>" class="booking">
 					<?php 
@@ -39,6 +42,7 @@
 					$rcode = date("Y-m-d");
 					$id_user = "sample";
 					$id_cust = "sample";
+					$new_seat = $book->seat_av - $penumpang;
 					$new_id = $id++;
 					?>
 					<input type="hidden" name="reservation_code[<?php echo $i; ?>]" value="<?php echo $rcode ?>">
@@ -85,9 +89,21 @@
 							</div>
 							<span class="info">Tuliskan kebutuhan khususmu</span>
 						</div>
-						
+						<div style="height: 100%; margin-bottom: 400px;">								
+							<?php  for ($j=1; $j <= $book->seat_qty; $j++) {?>
+							<?php if (in_array($j, $kursi)) { ?>
+							<input type="radio" checked disabled value="<?php echo $i; ?>">
+							<?php }else{ ?>
+							<input type="radio" name="seat_code[<?php echo $i; ?>]" value="<?php echo $j; ?>">
+							<?php } ?>
+							<?php } ?>
+						</div>
 						<?php } ?>
-						<input type="submit" class="gradient-button" value="Proceed to next step" id="next-step" />
+						<input type="hidden" name="id_t" value="<?php echo $book->id_transportation; ?>">
+						<input type="hidden" name="seat_av" value="<?php echo $new_seat; ?>">
+						<div class="text-center">
+							<input type="submit" class="gradient-button" value="Proceed to next step" id="next-step" />
+						</div>
 					</fieldset>
 				</form>
 			</section>
@@ -104,7 +120,7 @@
 						<h6>Tiba</h6>
 						<p><?php echo "Pukul ". substr($book->arrival, 11); ?></p>
 						<h6>Sisa Kursi</h6>
-						<p><?php echo $kursi = $book->seat_qty ?></p>
+						<p><?php echo $kursi = $book->seat_av ?></p>
 						<h6>Jumlah Penumpang</h6>
 						<p><?php echo $penumpang ?></p>
 						<h6>Pesawat</h6>
