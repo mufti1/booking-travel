@@ -1,4 +1,4 @@
-<!--main-->
+main-->
 <div class="main" role="main">		
 	<div class="wrap clearfix">
 		<!--main content-->
@@ -32,6 +32,7 @@
 				else{
 					$id="C".$tambah;
 				} ?>
+				<?php $kursi = []; ?>
 				<?php foreach ($seat as $data) {
 					$kursi[] = $data->seat_code;
 				} ?>
@@ -87,7 +88,7 @@
 								<label>Kebutuhan Khusus: <span>(Tidak Wajib)</span></label>
 								<textarea rows="10" cols="10"></textarea>
 							</div>
-							<span class="info">Tuliskan kebutuhan khususmu</span>
+							<span class="info">Tuliskan kebutuhan khususmu </span>
 						</div>
 						<div style="height: 100%; margin-bottom: 400px;">								
 							<?php  for ($j=1; $j <= $book->seat_qty; $j++) {?>
@@ -146,4 +147,4 @@
 		<!--//main content-->
 	</div>
 </div>
-	<!--//main-->
+	<!--//main
