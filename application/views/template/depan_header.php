@@ -47,8 +47,8 @@
 				<nav>
 					<ul class="profile-nav">
 						<li class="active"><a href="#" title="My Account">My Account</a></li>
-						<li><a href="login.html" title="Login">Login</a></li>
-						<li><a href="my_account.html" title="Settings">Settings</a></li>
+						<li><a href="<?php echo base_url('/Login') ?>" title="Login">Login</a></li>
+						<li><a href="<?php echo base_url('/Login/logout') ?>" title="Login">Logout</a></li>
 					</ul>
 				</nav>
 			</div>

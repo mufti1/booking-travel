@@ -1,4 +1,7 @@
-main-->
+<?php if (!$this->session->userdata('id_user')) {
+	redirect('/Login','refresh');
+} ?>
+<!-- main--> 
 <div class="main" role="main">		
 	<div class="wrap clearfix">
 		<!--main content-->
@@ -41,8 +44,7 @@ main-->
 					<?php 
 					$date = date("Y-m-d H:i:s"); 
 					$rcode = date("Y-m-d");
-					$id_user = "sample";
-					$id_cust = "sample";
+					$id_user = $this->session->userdata('id_user');;
 					$new_seat = $book->seat_av - $penumpang;
 					$new_id = $id++;
 					?>
@@ -93,7 +95,7 @@ main-->
 						<div style="height: 100%; margin-bottom: 400px;">								
 							<?php  for ($j=1; $j <= $book->seat_qty; $j++) {?>
 							<?php if (in_array($j, $kursi)) { ?>
-							<input type="radio" checked disabled value="<?php echo $i; ?>">
+							<input type="radio" checked disabled value="<?php echo $j; ?>">
 							<?php }else{ ?>
 							<input type="radio" name="seat_code[<?php echo $i; ?>]" value="<?php echo $j; ?>">
 							<?php } ?>

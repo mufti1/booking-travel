@@ -68,10 +68,16 @@ class Login extends CI_Controller {
 		$data=$this->Login_Model->login_user($data_login['username'], $data_login['password']);
 
 		if ($data) {
+			$lv = $data['level'];
 			$this->session->set_userdata('id_user', $data['id_user']);
 			$this->session->set_userdata('username', $data['username']);
 			$this->session->set_userdata('level', $data['level']);
-			redirect('/','refresh');
+			if ($lv = 'muftiganteng') {
+				
+				redirect('admin');
+			}elseif($lv = '1'){
+				redirect('/','refresh');
+			}
 		}
 		else{
 			echo("error");
@@ -80,6 +86,6 @@ class Login extends CI_Controller {
 
 	public function logout(){
 		$this->session->sess_destroy();
-		redirect('login','refresh');
+		redirect('/','refresh');
 	}
 }
