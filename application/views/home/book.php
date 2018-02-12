@@ -42,14 +42,15 @@
 				<?php $penumpang = $this->input->get('penumpang'); $harga = $penumpang * $book->price; for ($i=1; $i <= $penumpang ; $i++) {  ?>
 				<form id="booking" method="post" action="<?php echo base_url('/Home/booking/') ?>" class="booking">
 					<?php 
-					$date = date("Y-m-d H:i:s"); 
-					$rcode = date("Y-m-d");
-					$id_user = $this->session->userdata('id_user');;
+					$date = date("Y-m-d"); 
+					$at = date("H:i:s");
+					$id_user = $this->session->userdata('id_user');
+					$rcode = $id_user.date("Ymds");
 					$new_seat = $book->seat_av - $penumpang;
 					$new_id = $id++;
 					?>
 					<input type="hidden" name="reservation_code[<?php echo $i; ?>]" value="<?php echo $rcode ?>">
-					<input type="hidden" name="reservation_at[<?php echo $i; ?>]" value="<?php echo $date ?>">
+					<input type="hidden" name="reservation_at[<?php echo $i; ?>]" value="<?php echo $at ?>">
 					<input type="hidden" name="reservation_date[<?php echo $i; ?>]" value="<?php echo $date ?>">
 					<input type="hidden" name="id_customer[<?php echo $i; ?>]" value="<?php echo $new_id ?>">
 					<input type="hidden" name="id_rute[<?php echo $i; ?>]" value="<?php echo $book->id_rute ?>">

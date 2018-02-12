@@ -7,7 +7,10 @@
 	{
 		public function __construct()
 		{
+
 			parent::__construct();
+			$this->load->helper('url');
+			$this->load->library('pagination');
 			$this->load->model('Home_Model');
 		}
 
@@ -52,5 +55,54 @@
 			// $this->Home_Model->add_cust();
 
 			redirect('home','refresh');
+		}
+
+		//setting
+
+		public function setting($ids){
+			$data['judul'] = "My-Account";
+
+			$config['base_url'] = base_url()."Home/setting/$ids/";
+			$config['total_rows'] = $this->db->query("SELECT * FROM reservation where id_user ='$ids'")->num_rows();
+			$config['per_page']=3;
+			$config['num_links'] = 2;
+			$config['uri_segment']=4;
+		//Tambahan untuk styling
+			$config['full_tag_open'] = "<div class='pager'>";
+			$config['full_tag_close'] ="</div>";
+			$config['num_tag_open'] = '<span>';
+			$config['num_tag_close'] = '</span>';
+			$config['cur_tag_open'] = "<span>";
+			$config['cur_tag_close'] = "</span>";
+			$config['next_tag_open'] = "<span>";
+			$config['next_tagl_close'] = "</span>";
+			$config['prev_tag_open'] = "<span>";
+			$config['prev_tagl_close'] = "</span>";
+			$config['first_tag_open'] = "<span>";
+			$config['first_tagl_close'] = "</span>";
+			$config['last_tag_open'] = "<span>";
+			$config['last_tagl_close'] = "</span>";
+
+			$config['first_link']='<span> Pertama';
+			$config['last_link']='<span> Terakhir ';
+			$config['next_link']='&gt;';
+			$config['prev_link']='&lt;';
+			
+
+			$this->pagination->initialize($config);
+			$data['reservation']=$this->Home_Model->setting($config, $ids);
+
+			$this->load->view('/template/depan_header', $data);
+			$this->load->view('/home/account',$data);
+			$this->load->view('/template/depan_footer');
+		}
+
+		public function print_tiket($id_customer){
+			$data['judul'] = "PRINT TIKET";
+			$data['reservation'] = $this->Home_Model->print_tiket($id_customer);
+			
+			$this->load->view('/template/depan_header', $data);
+			$this->load->view('/home/tiket', $data);
+			$this->load->view('/template/depan_footer');
 		}
 	}

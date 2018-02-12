@@ -87,4 +87,28 @@
 			$this->db->select_max('id_customer');
 			return $this->db->get('customer')->row();
 		}
+
+		function setting($config, $ids){
+			$this->db->select('*');
+			$this->db->where('id_user', $ids);
+			$this->db->join('rute',  'reservation.id_rute = rute.id_rute');
+			$this->db->join('customer', 'reservation.id_customer = customer.id_customer');
+			$hasilquery=$this->db->get('reservation', $config['per_page'], $this->uri->segment(4));
+
+			if ($hasilquery->num_rows() > 0) {
+				foreach($hasilquery->result() as $value){
+					$data[]=$value;
+				}
+				return $data;
+			}
+		}
+
+		function print_tiket($id_customer){
+			$this->db->select('*');
+			$this->db->from('reservation');
+			$this->db->where('customer.id_customer', $id_customer);
+			$this->db->join('customer', 'reservation.id_customer = customer.id_customer');
+			$this->db->join('rute', 'reservation.id_rute = rute.id_rute');
+			return $this->db->get()->row();
+		}
 	}
