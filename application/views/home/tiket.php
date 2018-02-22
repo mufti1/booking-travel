@@ -26,7 +26,15 @@ if ($cetak!=$reservation->id_customer) {
 					<fieldset>
 						<h3><span>03 </span>Confirmation <?php echo($cetak); ?></h3>
 						<div class="text-wrap">
-							<a href="#" class="gradient-button print" title="Print booking" onclick="printpage()">Print booking</a>
+							<?php if ($reservation->status == 3): ?>
+								<a href="#" class="gradient-button print" title="Print booking" onclick="printpage()">Print booking</a>
+							<?php endif ?>
+							<?php if ($reservation->status == 2): ?>
+								<a href="#" class="gradient-button print">Sedang Dikonfirmasi</a>
+							<?php endif ?>
+							<?php if ($reservation->status == 0): ?>
+								<a href="<?php echo base_url('Home/payment/'.$reservation->reservation_code) ?>" class="gradient-button print">Pembayaran</a>
+							<?php endif ?>
 							<p>Thank you. Your booking is now confirmed.</p>
 						</div>
 

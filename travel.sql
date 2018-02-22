@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 09 Feb 2018 pada 01.19
+-- Generation Time: 22 Feb 2018 pada 02.50
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -33,28 +33,20 @@ CREATE TABLE `customer` (
   `name` varchar(255) NOT NULL,
   `address` text NOT NULL,
   `phone` varchar(13) NOT NULL,
-  `gender` enum('laki-laki','perempuan','','') NOT NULL
+  `gender` enum('laki-laki','perempuan','','') NOT NULL,
+  `kebutuhan` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `customer`
 --
 
-INSERT INTO `customer` (`id_customer`, `name`, `address`, `phone`, `gender`) VALUES
-('C0001', 'Test Cust', 'Karangkobarg', '0856712612', 'laki-laki'),
-('C0002', 'test gilang', 'banjar', '08329434', 'perempuan'),
-('C0003', 'gilangs', 'sfafas', '08123231', 'perempuan'),
-('C0004', 'kasd', 'sdanfdsa\r\n', 'jsdnk', 'laki-laki'),
-('C0005', 'saf', 'dsfadfsa', 'sdfa', 'laki-laki'),
-('C0006', 'firman', 'asjkhfdjkad\r\n', '921839', 'perempuan'),
-('C0007', 'MUFTI ISMI RIZQI', 'JL PRAMUKA NO 12', '085715338630', 'laki-laki'),
-('C0008', 'Mufti Ismi', 'jahja', '15338630', 'perempuan'),
-('C0009', 'hawley', 'bancarkembar', '01293901', 'laki-laki'),
-('C0010', 'hanan', 'karanglewas', '901239021', 'perempuan'),
-('C0011', 'boruto', 'konoha', '9120', 'laki-laki'),
-('C0012', 'sarada', 'sunagakure', '9012124', 'laki-laki'),
-('C0013', 'sakura', 'amegakure', '2319', 'laki-laki'),
-('C0014', 'af', 'as', 'sdf', 'laki-laki');
+INSERT INTO `customer` (`id_customer`, `name`, `address`, `phone`, `gender`, `kebutuhan`) VALUES
+('C0001', 'Test Cust', 'Karangkobarg', '0856712612', 'laki-laki', NULL),
+('C0002', 'Mufti Ismi', 'Karangklesem', '085715338630', 'laki-laki', NULL),
+('C0003', 'Hanabi Hyuga', 'Konoha', '092391', 'perempuan', NULL),
+('C0004', 'Test Cust 2', 'Mana ', '99123932', 'laki-laki', 'Saya sering gaje'),
+('C0005', 'Tesst Cust 3', 'ga tau', '123u312', 'perempuan', '');
 
 -- --------------------------------------------------------
 
@@ -64,32 +56,28 @@ INSERT INTO `customer` (`id_customer`, `name`, `address`, `phone`, `gender`) VAL
 
 CREATE TABLE `reservation` (
   `id_reservation` int(13) NOT NULL,
-  `reservation_code` varchar(13) NOT NULL,
-  `reservation_at` datetime NOT NULL,
-  `reservation_date` datetime NOT NULL,
+  `reservation_code` varchar(100) NOT NULL,
+  `reservation_at` varchar(20) NOT NULL,
+  `reservation_date` varchar(20) NOT NULL,
   `id_customer` varchar(13) NOT NULL,
   `id_transportation` varchar(13) NOT NULL,
   `id_rute` varchar(13) NOT NULL,
   `depart_at` datetime NOT NULL,
   `price` varchar(13) NOT NULL,
   `id_user` varchar(13) NOT NULL,
-  `seat_code` int(11) NOT NULL
+  `seat_code` int(11) NOT NULL,
+  `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `reservation`
 --
 
-INSERT INTO `reservation` (`id_reservation`, `reservation_code`, `reservation_at`, `reservation_date`, `id_customer`, `id_transportation`, `id_rute`, `depart_at`, `price`, `id_user`, `seat_code`) VALUES
-(4, '2018-02-07', '2018-02-07 03:06:06', '2018-02-07 03:06:06', 'C0007', 't001', 'r001', '2018-02-02 00:00:00', '5000', 'sample', 1),
-(5, '2018-02-07', '2018-02-07 03:06:06', '2018-02-07 03:06:06', 'C0008', 't001', 'r001', '2018-02-02 00:00:00', '5000', 'sample', 29),
-(6, '2018-02-07', '2018-02-07 09:20:08', '2018-02-07 09:20:08', 'C0009', 't001', 'r001', '2018-02-02 00:00:00', '5000', 'sample', 4),
-(7, '2018-02-07', '2018-02-07 09:20:08', '2018-02-07 09:20:08', 'C0010', 't001', 'r001', '2018-02-02 00:00:00', '5000', 'sample', 13),
-(9, '2018-02-08', '2018-02-08 13:10:36', '2018-02-08 13:10:36', 'C0012', 't001', 'r001', '2018-02-02 00:00:00', '5000', 'sample', 2),
-(14, '2018-02-08', '2018-02-08 13:43:30', '2018-02-08 13:43:30', 'C0011', 't001', 'r001', '2018-02-02 00:00:00', '5000', 'sample', 22),
-(15, '2018-02-08', '2018-02-08 13:43:30', '2018-02-08 13:43:30', 'C0012', 't001', 'r001', '2018-02-02 00:00:00', '5000', 'sample', 8),
-(16, '2018-02-08', '2018-02-08 13:50:22', '2018-02-08 13:50:22', 'C0013', 't001', 'r001', '2018-02-02 00:00:00', '5000', 'sample', 11),
-(17, '2018-02-08', '2018-02-08 13:52:25', '2018-02-08 13:52:25', 'C0014', 't001', 'r001', '2018-02-02 00:00:00', '5000', 'sample', 18);
+INSERT INTO `reservation` (`id_reservation`, `reservation_code`, `reservation_at`, `reservation_date`, `id_customer`, `id_transportation`, `id_rute`, `depart_at`, `price`, `id_user`, `seat_code`, `status`) VALUES
+(48, 'U00012018022111', '15:36:11', '2018-02-21', 'C0002', 't001', 'r001', '2018-02-02 00:00:00', '10111', 'U0001', 1, 2),
+(49, 'U00012018022111', '15:36:11', '2018-02-21', 'C0003', 't001', 'r001', '2018-02-02 00:00:00', '10111', 'U0001', 22, 2),
+(50, 'U00022018022229', '01:02:29', '2018-02-22', 'C0004', 't001', 'r001', '2018-02-02 00:00:00', '10229', 'U0002', 7, 2),
+(51, 'U00022018022229', '01:02:29', '2018-02-22', 'C0005', 't001', 'r001', '2018-02-02 00:00:00', '10229', 'U0002', 13, 2);
 
 -- --------------------------------------------------------
 
@@ -142,18 +130,17 @@ CREATE TABLE `transportation` (
   `id_transportation` varchar(13) NOT NULL,
   `code` varchar(13) NOT NULL,
   `description` text NOT NULL,
-  `seat_qty` int(3) NOT NULL,
-  `seat_av` int(11) NOT NULL
+  `seat_qty` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `transportation`
 --
 
-INSERT INTO `transportation` (`id_transportation`, `code`, `description`, `seat_qty`, `seat_av`) VALUES
-('t001', 'R 2560 SAH', 'Pesawat Apik', 40, 31),
-('t002', 'R 2521 SAH', 'sjfadkdfsjakl', 40, 39),
-('t003', 'R 8822', 'sdfkldfk', 40, 39);
+INSERT INTO `transportation` (`id_transportation`, `code`, `description`, `seat_qty`) VALUES
+('t001', 'R 2560 SAH', 'Pesawat Apik', 140),
+('t002', 'R 2521 SAH', 'sjfadkdfsjakl', 40),
+('t003', 'R 8822', 'sdfkldfk', 40);
 
 -- --------------------------------------------------------
 
@@ -221,7 +208,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id_reservation` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_reservation` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

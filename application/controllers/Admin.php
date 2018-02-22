@@ -107,4 +107,24 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/customer', $data);
 		$this->load->view('/template/footer');
 	}
+
+	// konfirmasi tiket
+
+	public function tiket(){
+		$data['reservation'] = $this->Admin_Model->tiket();
+		$this->load->view('/template/header');
+		$this->load->view('/template/sidebar');
+		$this->load->view('admin/tiket', $data);
+		$this->load->view('/template/footer');
+	}
+
+	public function terima($kode){
+		$data=array();
+		$this->Admin_Model->terima($kode);
+	}
+
+	public function batal($kode){
+		$data=array();
+		$this->Admin_Model->batal($kode);
+	}
 }

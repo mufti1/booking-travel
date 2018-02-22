@@ -33,6 +33,7 @@
 			$data['judul'] = "Hasil pencarian";
 			
 			$data['rute'] = $this->Home_Model->cari();
+			$data['sisa'] = $this->Home_Model->sisa();
 			$this->load->view('/template/depan_header', $data);
 			$this->load->view('/home/result', $data);
 			$this->load->view('/template/depan_footer');	
@@ -53,9 +54,26 @@
 			$data=array();
 			$this->Home_Model->booking();
 			// $this->Home_Model->add_cust();
-
-			redirect('home','refresh');
+			$kode = $this->input->post('reservation_code[0]');
+			redirect('/Home/payment/'.$kode,'refresh');
 		}
+
+		public function send_payment(){
+			$data=array();
+			$this->Home_Model->send_payment();
+
+			redirect('/Home','refresh');
+		}
+
+		//payment
+		public function payment($kode){
+			$data['payment'] = $this->Home_Model->payment($kode);
+			$data['penumpang'] = $this->Home_Model->hitung_penumpang($kode);
+			$this->load->view('/template/depan_header');
+			$this->load->view('/home/payment', $data);
+			$this->load->view('/template/depan_footer');
+		}
+		//payment
 
 		//setting
 
@@ -83,8 +101,8 @@
 			$config['last_tag_open'] = "<span>";
 			$config['last_tagl_close'] = "</span>";
 
-			$config['first_link']='<span> Pertama';
-			$config['last_link']='<span> Terakhir ';
+			$config['first_link']='<span> Pertama </span>';
+			$config['last_link']='<span> Terakhir </span>';
 			$config['next_link']='&gt;';
 			$config['prev_link']='&lt;';
 			

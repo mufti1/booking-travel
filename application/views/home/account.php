@@ -58,8 +58,8 @@ if ($cetak != $id_user) {
 									<td><?php echo $data->name ?></td>
 								</tr>
 								<tr>
-									<th>Id Customer</th>
-									<td><?php echo $data->id_customer ?></td>
+									<th>Nomor kursi</th>
+									<td><?php echo $data->seat_code ?></td>
 								</tr>
 								<tr>
 									<th>Dari</th>
@@ -77,8 +77,15 @@ if ($cetak != $id_user) {
 						</div>
 
 						<div class="actions">
-							<a href="<?php echo base_url('Home/print_tiket/'.$data->id_customer) ?>" class="gradient-button">View confirmation</a>
-							<a href="#" class="gradient-button">Print confirmation</a>
+							<?php if ($data->status == 3): ?>
+								<a href="<?php echo base_url('Home/print_tiket/'.$data->id_customer) ?>" class="gradient-button">View confirmation</a>
+							<?php endif ?>
+							<?php if ($data->status == 2): ?>
+								<a href="#" class="gradient-button">Sedang Dikonfirmasi</a>
+							<?php endif ?>
+							<?php if ($data->status == 0): ?>
+								<a href="<?php echo base_url('Home/payment/'.$data->reservation_code) ?>" class="gradient-button">Pembayaran</a>
+							<?php endif ?>
 						</div>
 					</article>
 					<?php } ?>

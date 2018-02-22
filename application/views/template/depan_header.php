@@ -39,7 +39,7 @@
 	<header>
 		<div class="wrap clearfix">
 			<!--logo-->
-			<h1 class="logo"><a href="index.html" title="TravelSist - beranda"><img src="<?php echo base_url('/assets/depan/'); ?>images/txt/logo.png" alt="Book Your Travel" /></a></h1>
+			<h1 class="logo"><a href="<?php echo base_url(); ?>" title="TravelSist - beranda"><img src="<?php echo base_url('/assets/depan/'); ?>images/txt/logo.png" alt="Book Your Travel" /></a></h1>
 			<!--//logo-->
 
 			<!--ribbon-->

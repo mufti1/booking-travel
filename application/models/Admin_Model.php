@@ -55,4 +55,30 @@ class Admin_Model extends CI_Model {
 		$this->db->like('name', $nama);
 		return $this->db->get('customer')->result();
 	}
+
+	function tiket(){
+		$this->db->where('status', 2);
+		$this->db->join('customer', 'reservation.id_customer = customer.id_customer');
+		return $this->db->get('reservation')->result();
+	}
+
+	function terima($kode){
+		$data=array(
+			'status' => 3
+		);
+
+		$this->db->where('reservation_code', $kode);
+		$this->db->update('reservation', $data);
+		redirect('Admin','refresh');
+	}
+
+	function batal($kode){
+		$data=array(
+			'status' => 0
+		);
+
+		$this->db->where('reservation_code', $kode);
+		$this->db->update('reservation', $data);
+		redirect('Admin','refresh');
+	}
 }
