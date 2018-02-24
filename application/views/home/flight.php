@@ -68,7 +68,7 @@
 					<h4><span>03</span> Hari apa berangkatnya Sist?</h4>
 					<div class="f-item forem-control">
 						<label for="datepicker6">Departing on</label>
-						<div class="datepicker-wrap"><input type="text" placeholder="" class="tanggal" id="datepicker6" name="depart_at" /></div>
+						<div class="datepicker-wrap"><input type="text" required placeholder="" class="tanggal" id="datepicker6" name="depart_at" /></div>
 					</div>
 				</div>
 				<!--//column-->

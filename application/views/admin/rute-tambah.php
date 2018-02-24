@@ -30,7 +30,7 @@ if ($level != "muftiganteng") {
 							<div class="input-group-addon">
 								<i class="fa fa-user"></i>
 							</div>
-							<input name="rute_from" type="text" class="form-control">
+							<input name="rute_from" type="text" class="form-control" placeholder="Purwokerto(PWT)-Soedirman">
 						</div>
 					</div>
 					<div class="form-group">
@@ -39,7 +39,7 @@ if ($level != "muftiganteng") {
 							<div class="input-group-addon">
 								<i class="fa fa-user"></i>
 							</div>
-							<input name="rute_to" type="text" class="form-control">
+							<input name="rute_to" type="text" class="form-control" placeholder="Banjarnegara(BJR)-Nasution">
 						</div>
 					</div>
 					<div class="form-group">
@@ -64,7 +64,7 @@ if ($level != "muftiganteng") {
 							<div class="input-group-addon">
 								<i class="fa fa-phone"></i>
 							</div>
-							<input name="price" type="text" class="form-control">
+							<input name="price" type="text" class="form-control" placeholder="200000">
 						</div>
 						<!-- /.input group -->
 					</div>
@@ -201,7 +201,7 @@ if ($level != "muftiganteng") {
 				</form></div>
 				<!-- /.box-body -->
 			</div>
-			<?php
+			<!-- <?php
 			$startDate = "2018-02-02";
 			$endDate = "2018-02-22";
 			$time = "16:55:00";
@@ -209,7 +209,7 @@ if ($level != "muftiganteng") {
 				$data = date('Y-m-d', $i).' '.$time;
 				echo($data)."<br>";
 			}
-			?>
+			?> -->
 		</section>
 	</div>
 

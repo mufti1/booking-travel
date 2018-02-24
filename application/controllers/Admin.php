@@ -111,10 +111,12 @@ class Admin extends CI_Controller {
 	// konfirmasi tiket
 
 	public function tiket(){
+		$data['judul'] = "Tiket Masuk";
 		$data['reservation'] = $this->Admin_Model->tiket();
-		$this->load->view('/template/header');
+		$this->load->view('/template/header', $data);
 		$this->load->view('/template/sidebar');
 		$this->load->view('admin/tiket', $data);
+		// $this->load->view('home/test', $data);
 		$this->load->view('/template/footer');
 	}
 

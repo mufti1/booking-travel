@@ -27,11 +27,13 @@ if ($level != "muftiganteng") {
 					</div>
 					<!-- /.box-header -->
 					<div class="box-body">
-						<table id="example2" class="table table-bordered table-hover">
+						<table id="example1" class="table table-bordered table-hover table-striped dataTable" role="grid" aria-describedby="example1_info">
 							<thead>
 								<tr>
 									<th>Reservation Code</th>
 									<th>Id User</th>
+									<th>Tanggal Pesan</th>
+									<th>Jam Pesan</th>
 									<th>Price</th>
 									<th>Nama</th>
 									<th>Id Customer</th>
@@ -39,11 +41,13 @@ if ($level != "muftiganteng") {
 								</tr>
 							</thead>
 							<tbody>
+								
 								<?php foreach ($reservation as $data) { ?>
 								<tr>
 									<td><?php echo $data->reservation_code ?></td>
-									<td><?php echo $data->id_user ?>
-									</td>
+									<td><?php echo $data->id_user ?></td>
+									<td><?php echo $data->reservation_date ?></td>
+									<td><?php echo $data->reservation_at ?></td>
 									<td><?php echo $data->price ?></td>
 									<td><?php echo $data->name ?></td>
 									<td><?php echo $data->id_customer ?></td>

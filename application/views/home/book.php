@@ -7,11 +7,11 @@
 .customer-color{
 	width: 15px;
 	height: 15px;
-	background-color:#63f15f;
+	background-color:#35B0AB;
 	cursor:pointer;
 }
 .customer-selected{
-	background-color:#27e067;
+	background-color:#226B80;
 }
 /* seat */
 .seat{
@@ -22,8 +22,8 @@
 	overflow: hidden;
 }
 .seat-id{
-	height: 46px;
-	width: 46px;
+	height: 20px;
+	width: 20px;
 	margin:2px;
 	background-color: #bfbfbf;
 	float: left;
@@ -34,11 +34,11 @@
 	padding-top: 15px;
 }
 .seat-notavailabe{
-	background-color: #f25d52;
+	background-color: #e85b93;
 	/* cursor:disabl */
 }
 .seat-selected{
-	background-color: #27e067;
+	background-color: #35B0AB;
 }
 
 </style>
@@ -84,7 +84,7 @@
 				<form id="booking" method="post" action="<?php echo base_url('/Home/booking/') ?>" class="booking">
 					<?php 
 					$date = date("Y-m-d"); 
-					$at = date("H:i:s");
+					$at = date("H:i:sa");
 					$id_user = $this->session->userdata('id_user');
 					$rcode = $id_user.date("Ymds");
 					
@@ -106,24 +106,24 @@
 						<div class="row twins">
 							<div class="f-item">
 								<label for="first_name">Nama</label>
-								<input type="text" id="first_name" name="name[]" />
+								<input type="text" id="first_name" name="name[]" required />
 							</div>
 							<div class="f-item">
 								<label for="last_name">Alamat</label>
-								<input type="text" id="last_name" name="address[]" />
+								<input type="text" id="last_name" name="address[]" required/>
 							</div>
 						</div>
 
 						<div class="row twins">
 							<div class="f-item">
 								<label for="email">No Hp</label>
-								<input type="text" id="email" name="phone[]" />
+								<input type="text" id="email" name="phone[]" required/>
 							</div>
 							<div class="f-item">
 								<label for="gender">Jenis Kelamin</label>
 								<select name="gender[]">
 									<option value="laki-laki">Laki - laki</option>
-									<option value="perempuan">Perempuan</option>}
+									<option value="perempuan">Perempuan</option>
 								</select>
 							</div>
 						</div>
@@ -149,7 +149,7 @@
 										<h6>Penumpang <?php echo $i ?></h6>
 									</td>
 									<td>
-										<input id="i<?php echo$i ?>" type="text" name="seat_code[]">
+										<input id="i<?php echo$i ?>" type="text" readonly name="seat_code[]">
 									</td>
 								</tr>
 							</table>
@@ -159,9 +159,9 @@
 						<div class="seat">
 							<?php  for ($j=1; $j <= $book->seat_qty; $j++) {?>
 							<?php if (in_array($j, $kursi)) { ?>
-							<div id="<?php echo $j; ?>" class="seat-id seat-notavailabe"><p><?php echo $j; ?></p></div>
+							<div id="<?php echo $j; ?>" class="seat-id seat-notavailabe"><p><!-- <?php echo $j; ?> --></p></div>
 							<?php }else{ ?>
-							<div onclick="sget(this.id)" id="<?php echo $j; ?>" class="seat-id"><p><?php echo $j; ?></p></div>
+							<div onclick="sget(this.id)" id="<?php echo $j; ?>" class="seat-id"><p><!-- <?php echo $j; ?> --></p></div>
 							<?php } ?>
 							<?php } ?>
 						</div>

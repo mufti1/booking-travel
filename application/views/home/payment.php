@@ -24,9 +24,9 @@
 			</nav>
 			<!--//breadcrumbs-->
 			<?php 
-			 $penumpang = $penumpang->penumpang;
-			 $kodeUnik = substr($payment->reservation_code, 12, 15); 
-			 $newPrice = ($payment->price * $penumpang) + $kodeUnik;  
+			$penumpang = $penumpang->penumpang;
+			$kodeUnik = substr($payment->reservation_code, 12, 15); 
+			$newPrice = ($payment->price * $penumpang) + $kodeUnik;  
 			?>
 			<!--three-fourth content-->
 			<section class="three-fourth">
@@ -35,7 +35,26 @@
 					<input type="hidden" name="price" value="<?php echo $newPrice ?>">
 					<fieldset>
 						<h3><span>02 </span>Payment</h3>
-						<h4> Transfer ke : 1782017201820 </h4>
+						<div class="row twins">
+							<div class="f-item">
+								<h4>Pilih Bank:</h4>
+								<div class="selector" id="uniform-undefined">
+									<script>
+										function rekening($i) {
+											document.getElementById('rekening').innerHTML = $i;
+										}
+									</script>
+									<select onchange="rekening(value);">
+										<option>Pilih Bank</option>
+										<option value="Transfer ke : 1563016616 <br/><label>Atas Nama : PT Terbang Selamanya</label>">BCA</option>
+										<option value="Transfer ke : 130-00-0010947-3 <br/><label>Atas Nama : PT Terbang Selamanya</label>">Mandiri</option>
+										<option value="Transfer ke : 000501001641300 <br/><label>Atas Nama : PT Terbang Selamanya</label>">BRI</option>
+										<option value="Transfer ke : 0287171911 <br/><label>Atas Nama : PT Terbang Selamanya</label>">BNI</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<h4 id="rekening"></h4>
 						<h4> Sebesar : Rp <?php echo $newPrice; ?> </h4>
 						<label>*ingat harap transfer sesuai dengan yang tertera di web</label>
 

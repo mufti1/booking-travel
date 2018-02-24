@@ -1,4 +1,4 @@
-<meta http-equiv="refresh" content="60">
+<!-- <meta http-equiv="refresh" content="60"> -->
 <div class="wrapper">
   <header class="main-header">
     <a href="index2.html" class="logo">
@@ -32,7 +32,7 @@
         <li>
           <a href="<?php echo base_url('admin/tiket') ?>">
             <i class="fa fa-ticket"></i>
-            <span>Data Tiket
+            <span>Tiket Masuk
               <small class="label pull-right bg-red">
                 <?php 
                 $this->db->where('status', 2);
@@ -44,6 +44,7 @@
           </a>
         </li>
         <li><a href=""><i class="fa fa-user"></i> <span>Data User</span></a></li>
+        <li><a href="<?php echo base_url('rute'); ?>"><i class="fa fa-user"></i> <span>Tambah Rute</span></a></li>
       </ul>
     </section>
   </aside>

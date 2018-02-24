@@ -10,6 +10,7 @@
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url('/assets/adminlte/'); ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url('/assets/adminlte/'); ?>bower_components/bootstrap/dist/js/bootstrap-datepicker.js"></script>
+<script src="<?php echo base_url('/assets/adminlte/'); ?>plugins/timepicker/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function () {
 		$('.tanggal').datepicker({
@@ -17,7 +18,46 @@
 			autoclose:true
 		});
 	});
+
+  $(document).ready(function () {
+    $('#datepicker1').datepicker({
+      format: "yyyy-mm-dd",
+      autoclose:true
+    });
+  });
+
+  $(document).ready(function () {
+    $('#datepicker2').datepicker({
+      format: "yyyy-mm-dd",
+      autoclose:true
+    });
+  });
+
+$(document).ready(function () {
+    $('#datepicker3').datepicker({
+      format: "yyyy-mm-dd",
+      autoclose:true
+    });
+  });
+
+$(document).ready(function () {
+    $('#datepicker4').datepicker({
+      format: "yyyy-mm-dd",
+      autoclose:true
+    });
+  });
+
+  $('.timepicker').timepicker({
+    showInputs: false,
+    defaultTime:'value',
+    minuteStep:1,
+    showSeconds:true,
+    showMeridian:false
+
+  })
+
 </script>
+
 <!-- DataTables -->
 <script src="<?php echo base_url('/assets/adminlte/'); ?>bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="<?php echo base_url('/assets/adminlte/'); ?>bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>

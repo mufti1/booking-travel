@@ -46,7 +46,7 @@ if ($cetak != $id_user) {
 					<?php foreach ($reservation as $data) {?>
 					<!--booking-->
 					<article class="bookings">
-						<h1><a href="#">Best ipsum hotel</a></h1>
+						<h1><?php echo $data->rute_from ?> -> <?php echo $data->rute_to ?></h1>
 						<div class="b-info">
 							<table>
 								<tr>

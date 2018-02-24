@@ -38,8 +38,17 @@
                   <div class="details">
                     <h1><?php echo $data->rute_from; ?> Ke <?php echo $data->rute_to; ?></h1>
                     <div class="f-wrap">
-                      <h5>Deskripsi</h5>
-                      <div class="flight-info"><?php echo $data->description; ?></div>
+                      <h5>Durasi</h5>
+                      <div class="flight-info">
+                        <?php  
+                        $arrive = strtotime($data->arrival);
+                        $depart = strtotime($data->depart_at);
+                        $durasi = $arrive-$depart;
+
+                        echo gmdate("H", $durasi ), ' jam ' .gmdate("i", $durasi). ' menit'
+                        ?>
+
+                      </div>
                     </div>
                     <div class="f-wrap">
                       <h5>Pergi</h5>
