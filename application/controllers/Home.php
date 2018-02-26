@@ -34,6 +34,7 @@
 			
 			$data['rute'] = $this->Home_Model->cari();
 			$data['sisa'] = $this->Home_Model->sisa();
+
 			$this->load->view('/template/depan_header', $data);
 			$this->load->view('/home/result', $data);
 			$this->load->view('/template/depan_footer');	

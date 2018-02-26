@@ -26,11 +26,15 @@
             <li>Rating <a href="#" title="ascending" class="ascending">ascending</a><a href="#" title="descending" class="descending">descending</a></li>
           </ul>
         </div>
-        <?php $muf = $sisa->uhuy; ?>
+        <?php $i = 0;?>
         <?php foreach ($rute as $data) { 
-          $kursi = ($data->seat_qty - $muf) - $this->input->get('penumpang');
-          if ($kursi < 0) {} 
-            else if($kursi >= 0) {
+          $qry="Select * from reservation where id_rute like '".$data->id_rute."' And depart_at like '".$data->depart_at."'";
+          $w[$i] = $this->db->query($qry)->num_rows();
+          $x[$i] = $data->seat_qty - $w[$i];
+
+          // $x[$i] = ($data->seat_qty - $muf) - $this->input->get('penumpang');
+          if ($x[$i] < 0) {} 
+            else if($x[$i] > 0) {
               ?>
               <div class="deals clearfix flights" >
                 <!--deal-->
@@ -60,7 +64,7 @@
                     </div>  
                     <div class="f-wrap last">
                       <h5>Sisa Kursi</h5>
-                      <div class="flight-info"><?php echo $data->seat_qty - $muf; ?></div>
+                      <div class="flight-info"><?php echo $x[$i]; ?></div>
                     </div>
                     <span class="price">Harga Perorang  <em>Rp <?php echo $data->price; ?></em> </span>
                     <div class="description">
@@ -73,13 +77,13 @@
                         <input type="hidden" name="depart_at" value="<?php echo $data->depart_at ?>">
                         <input type="hidden" name="id_rute" value="<?php echo $data->id_rute ?>">
                         <input type="hidden" name="penumpang" value="<?php echo $this->input->get('penumpang') ?>">
-                        <input type="hidden" name="siskur" value="<?php echo $data->seat_qty - $muf; ?>">
+                        <input type="hidden" name="siskur" value="<?php echo $x[$i]; ?>">
                         <button type="submit" class="gradient-button">Choose</button>
                       </form>
                     </div>
                   </div>
                 </article>
-                <?php } } ?>
+                <?php } $i++;} ?>
                 <!--//deal-->
 
                 <!--bottom navigation-->

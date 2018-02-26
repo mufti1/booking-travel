@@ -71,7 +71,7 @@ if ($level != "muftiganteng") {
 
 					<div class="alert alert-warning col-md-12">
 						<div class="form-group">
-							<input type="radio" name="aksi" value="manual" checked>Manual
+							<input type="radio" name="aksi" value="manual" onchange="myfunct();" checked>Manual
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
@@ -93,7 +93,7 @@ if ($level != "muftiganteng") {
 										<div class="input-group-addon">
 											<i class="fa fa-clock-o"></i>
 										</div>
-										<input type="text" name="depart_time" class="form-control timepicker pull-right">
+										<input type="text" name="depart_time" class="form-control timepicker pull-right" id="depart">
 									</div>
 								</div>
 							</div>
@@ -119,14 +119,39 @@ if ($level != "muftiganteng") {
 										<div class="input-group-addon">
 											<i class="fa fa-clock-o"></i>
 										</div>
-										<input type="text" name="arrive_time" class="form-control timepicker pull-right">
+										<input type="text" name="arrive_time" class="form-control timepicker pull-right" id="arrive">
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
-							<input type="radio" name="aksi" value="otomatis">Otomatis
+							<input type="radio" name="aksi" value="otomatis" onchange="auto();">Otomatis
 						</div>
+						<script type="text/javascript">
+							function myfunct(){
+								document.getElementById('depart').disabled = false;
+								document.getElementById('arrive').disabled = false;
+								document.getElementById('datepicker1').disabled = false;
+								document.getElementById('datepicker2').disabled = false;
+								document.getElementById('datepicker3').disabled = true;
+								document.getElementById('datepicker4').disabled = true;
+								document.getElementById('jamber').disabled = true;
+								document.getElementById('jamsam').disabled = true;
+								document.getElementById('aksi').disabled = true;
+							}
+
+							function auto(){
+								document.getElementById('depart').disabled = true;
+								document.getElementById('arrive').disabled = true;
+								document.getElementById('datepicker1').disabled = true;
+								document.getElementById('datepicker2').disabled = true;
+								document.getElementById('datepicker3').disabled = false;
+								document.getElementById('datepicker4').disabled = false;
+								document.getElementById('jamber').disabled = false;
+								document.getElementById('jamsam').disabled = false;
+								document.getElementById('aksi').disabled = false;
+							}
+						</script>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label>Dari Tanggal:</label>
@@ -135,7 +160,7 @@ if ($level != "muftiganteng") {
 									<div class="input-group-addon">
 										<i class="fa fa-calendar"></i>
 									</div>
-									<input type="text" name="dari" class="form-control pull-right" id="datepicker3">
+									<input type="text" name="dari" class="form-control pull-right" id="datepicker3" disabled>
 								</div>
 							</div>
 						</div>
@@ -148,7 +173,7 @@ if ($level != "muftiganteng") {
 									<div class="input-group-addon">
 										<i class="fa fa-calendar"></i>
 									</div>
-									<input type="text" name="sampai" class="form-control pull-right" id="datepicker4">
+									<input type="text" name="sampai" class="form-control pull-right" id="datepicker4" disabled>
 								</div>
 							</div>
 						</div>
@@ -161,7 +186,7 @@ if ($level != "muftiganteng") {
 										<div class="input-group-addon">
 											<i class="fa fa-clock-o"></i>
 										</div>
-										<input type="text" name="depart_time_period" class="form-control timepicker pull-right">
+										<input type="text" name="depart_time_period" class="form-control timepicker pull-right" id="jamber" disabled>
 									</div>
 								</div>
 							</div>
@@ -174,7 +199,7 @@ if ($level != "muftiganteng") {
 										<div class="input-group-addon">
 											<i class="fa fa-clock-o"></i>
 										</div>
-										<input type="text" name="arrive_time_period" class="form-control timepicker pull-right">
+										<input type="text" name="arrive_time_period" class="form-control timepicker pull-right" id="jamsam" disabled>
 									</div>
 								</div>
 							</div>
@@ -187,7 +212,7 @@ if ($level != "muftiganteng") {
 									<div class="input-group-addon">
 										<i class="fa fa-user"></i>
 									</div>
-									<select name="setiap" class="form-control">
+									<select name="setiap" class="form-control" id="aksi" disabled>
 										<option value="day">Hari</option>
 										<option value="week">Minggu</option>
 									</select>

@@ -45,6 +45,7 @@
         </li>
         <li><a href=""><i class="fa fa-user"></i> <span>Data User</span></a></li>
         <li><a href="<?php echo base_url('rute'); ?>"><i class="fa fa-user"></i> <span>Tambah Rute</span></a></li>
+        <li><a href="<?php echo base_url('rute/view'); ?>"><i class="fa fa-user"></i> <span>Data Rute</span></a></li>
       </ul>
     </section>
   </aside>

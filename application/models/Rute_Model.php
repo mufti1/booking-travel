@@ -76,4 +76,35 @@ class Rute_Model extends CI_Model
 			$this->db->insert('rute', $data);
 		}
 	}
+
+	function view_rute(){
+		$this->db->order_by('id_rute', 'desc');
+		return $this->db->get('rute')->result();
+	}
+
+	function hapus($id){
+		$this->db->where('id_rute', $id);
+		$this->db->delete('rute');
+	}
+
+	function view_edit($id){
+		$this->db->where('id_rute', $id);
+		$this->db->join('transportation', 'rute.id_transportation = transportation.id_transportation');
+		return $this->db->get('rute')->row();
+	}
+
+	function edit($id){
+		$data=array(
+			'depart_at' => $this->input->post('depart_date'),
+			'arrival' => $this->input->post('arrive_date'),
+			'rute_from' => $this->input->post('rute_from'),
+			'rute_to' => $this->input->post('rute_to'),
+			'price' => $this->input->post('price'),
+			'id_transportation' => $this->input->post('id_transportation')
+		);
+
+		$this->db->where('id_rute', $id);
+
+		$this->db->update('rute', $data);
+	}
 }
