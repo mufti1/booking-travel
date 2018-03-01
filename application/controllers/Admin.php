@@ -25,9 +25,31 @@ class Admin extends CI_Controller {
 		$this->load->library('pagination');
 		$this->load->database();
 		$this->load->model('Admin_Model');
+		$level = $this->session->userdata('level');
+		if ($level != "muftiganteng") {
+			redirect('/','refresh');
+		}
 	}
 	public function index()
 	{
+		$data['tiket'] = $this->Admin_Model->hitung_tiket();
+		$data['user'] = $this->Admin_Model->hitung_user();
+		$data['cust'] = $this->Admin_Model->hitung_cust();
+		$data['hasil']= $this->Admin_Model->penghasilan();
+		$this->load->view('/template/header');
+		$this->load->view('/template/sidebar');
+		$this->load->view('admin/rekap',$data);
+		$this->load->view('/template/footer');
+	}
+
+	public function save(){
+		$data=array();
+		$this->Admin_Model->banner();
+		$this->session->set_flashdata('success_msg', 'berhasil mengganti banner');
+		redirect('admin','refresh');
+	}
+
+	public function customer_view(){
 		$data['customer'] = $this->Admin_Model->kode_cust();
 		$this->load->view('/template/header');
 		$this->load->view('/template/sidebar');

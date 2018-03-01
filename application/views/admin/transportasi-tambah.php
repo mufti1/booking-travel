@@ -14,76 +14,65 @@
   <section class="content">
    <?php 
   // cek buat user terbesar
-   $usr = $customer->id_customer;
+   $usr = $kode->id_transportation;
    $newus = substr($usr,1,4);
 
    $tambah=$newus+1;
    if ($tambah<10) {
-    $id="C000".$tambah;
+    $id="T000".$tambah;
   }
   elseif ($tambah<100) {
-    $id="C00".$tambah;
+    $id="T00".$tambah;
   }
   else if($tambah<1000){
-    $id="C0".$tambah;
+    $id="T0".$tambah;
   }
   else{
-    $id="C".$tambah;
+    $id="T".$tambah;
   }
 
   ?>
   <div class="box box-danger">
     <div class="box-header">
-      <h3 class="box-title">Tambah Customer</h3>
+      <h3 class="box-title">Tambah Transportasi</h3>
     </div>
     <div class="box-body">
-      <?php echo form_open('Admin/tambah'); ?>
-      <input type="hidden" name="id_customer" value="<?php echo($id); ?>">
+      <?php echo form_open('Transportasi/tambah'); ?>
+      <input type="hidden" name="id_transportation" value="<?php echo($id); ?>">
       <!-- Date dd/mm/yyyy -->
       <div class="form-group">
-        <label>Nama:</label>
+        <label>Nama Pesawat:</label>
 
         <div class="input-group">
           <div class="input-group-addon">
             <i class="fa fa-file"></i>
           </div>
-          <input type="text" name="name" class="form-control">
+          <input type="text" name="armada" class="form-control">
         </div>
         <!-- /.input group -->
       </div>
-      <div class="form-group">
-        <label>Jenis Kelamin</label>
-        <div class="input-group">
-          <div class="input-group-addon">
-            <i class="fa fa-user"></i>
-          </div>
-          <select name="gender" class="form-control">
-            <option value="laki-laki">Laki-Laki</option>
-            <option value="perempuan">Perempuan</option>
-          </select>
-        </div>
-      </div>
+      
       <!-- /.form group -->
       <!-- phone mask -->
       <div class="form-group">
-        <label>Telephone:</label>
+        <label>Kode Pesawat:</label>
 
         <div class="input-group">
           <div class="input-group-addon">
             <i class="fa fa-phone"></i>
           </div>
-          <input name="phone" type="text" class="form-control">
+          <input name="code" type="text" class="form-control">
         </div>
         <!-- /.input group -->
       </div>
-
+      
       <div class="form-group">
-        <label>Alamat:</label>
+        <label>Banyak Kursi:</label>
         <div class="input-group">
           <div class="input-group-addon">
             <i class="fa fa-map"></i>
           </div>
-          <textarea name="address" class="form-control"></textarea>
+          <textarea name="seat_qty" class="form-control"></textarea>
         </div>
       </div>
       <input type="submit" name="submit" class="btn btn-success">

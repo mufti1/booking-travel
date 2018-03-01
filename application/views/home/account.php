@@ -75,18 +75,20 @@ if ($cetak != $id_user) {
 								</tr>
 							</table>
 						</div>
-
-						<div class="actions">
-							<?php if ($data->status == 3): ?>
-								<a href="<?php echo base_url('Home/print_tiket/'.$data->id_customer) ?>" class="gradient-button">View confirmation</a>
-							<?php endif ?>
-							<?php if ($data->status == 2): ?>
-								<a href="#" class="gradient-button">Sedang Dikonfirmasi</a>
-							<?php endif ?>
-							<?php if ($data->status == 0): ?>
-								<a href="<?php echo base_url('Home/payment/'.$data->reservation_code) ?>" class="gradient-button">Pembayaran</a>
-							<?php endif ?>
-						</div>
+						<form action="<?php echo base_url('home/print_tiket') ?>" method="post" accept-charset="utf-8">
+							<input type="hidden" name="cust" value="<?php echo $data->id_customer ?>">
+							<div class="actions">
+								<?php if ($data->status == 3): ?>
+									<input type ="submit" class="gradient-button" value="View confirmation">
+								<?php endif ?>
+								<?php if ($data->status == 2): ?>
+									<a href="#" class="gradient-button">Sedang Dikonfirmasi</a>
+								<?php endif ?>
+								<?php if ($data->status == 0): ?>
+									<a href="<?php echo base_url('Home/payment/'.$data->reservation_code) ?>" class="gradient-button">Pembayaran</a>
+								<?php endif ?>
+							</div>
+						</form>
 					</article>
 					<?php } ?>
 					<!--//booking-->
@@ -228,21 +230,21 @@ if ($cetak != $id_user) {
 
 				<!--Need Help Booking?-->
 				<article class="default clearfix">
-					<h2>Need Help Booking?</h2>
-					<p>Call our customer services team on the number below to speak to one of our advisors who will help you with all of your holiday needs.</p>
-					<p class="number">1- 555 - 555 - 555</p>
+					<h2>Butuh bantuan untuk pemesanan?</h2>
+					<p>Silahkan hubungi customer service kami, customer service kami bekerja 24 jam dan di hari libur kami tetap melayani pelanggan</p>
+					<p class="number">0281-252002</p>
 				</article>
 				<!--//Need Help Booking?-->
 
 				<!--Why Book with us?-->
 				<article class="default clearfix">
-					<h2>Why Book with us?</h2>
-					<h3>Low rates</h3>
-					<p>Get the best rates, or get a refund.<br />No booking fees. Save money!</p>
-					<h3>Largest Selection</h3>
-					<p>140,000+ hotels worldwide<br />130+ airlines<br />Over 3 million guest reviews</p>
-					<h3>We’re Always Here</h3>
-					<p>Call or email us, anytime<br />Get 24-hour support before, during, and after your trip</p>
+					<h2>Kenapa harus TravelSist?</h2>
+					<h3>Nggak Ribet</h3>
+					<p>Di TravelSist sista bisa pesan dimanapun, dan tak perlu mengupload bukti pembayaran</p>
+					<h3>Banyak Pilihan</h3>
+					<p>Di TravelSist sista bisa memilih beragam penerbangan kemanapun</p>
+					<h3>Kami Slalu ada</h3>
+					<p>Customer service kami selalu aktif setiap hari dan 24 jam, jadi jangan risau untuk tanya-tanya</p>
 				</article>
 				<!--//Why Book with us?-->
 

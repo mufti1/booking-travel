@@ -4,16 +4,16 @@
 	<div class="wrap clearfix">
 		<!--column-->
 		<article class="one-fourth">
-			<h3>Book Your Travel</h3>
-			<p>1400 Pennsylvania Ave. Washington, DC</p>
-			<p><em>P:</em> 24/7 customer support: 1-555-555-5555</p>
-			<p><em>E:</em> <a href="#" title="booking@mail.com">booking@mail.com</a></p>
+			<h3>TravelSist</h3>
+			<p>JL. In dulu aja hubungan kita ya :)</p>
+			<p><em>P:</em> 24/7 customer service: 0281-252002 </p>
+			<p><em>E:</em> <a href="#" title="booking@mail.com">colek@travelsist.com</a></p>
 		</article>
 		<!--//column-->
 
 		<!--column-->
 		<article class="one-fourth">
-			<h3>Customer support</h3>
+			<h3>Customer Service</h3>
 			<ul>
 				<li><a href="#" title="Faq">Faq</a></li>
 				<li><a href="#" title="How do I make a reservation?">How do I make a reservation?</a></li>
@@ -25,7 +25,7 @@
 
 		<!--column-->
 		<article class="one-fourth">
-			<h3>Follow us</h3>
+			<h3>Ikuti Kami</h3>
 			<ul class="social">
 				<li class="facebook"><a href="#" title="facebook">facebook</a></li>
 				<li class="youtube"><a href="#" title="youtube">youtube</a></li>
@@ -41,7 +41,7 @@
 
 		<!--column-->
 		<article class="one-fourth last">
-			<h3>Don’t miss our exclusive offers</h3>
+			<h3>Subscribe sekarang!</h3>
 			<form id="newsletter" action="newsletter.php" method="post">
 				<fieldset>
 					<input type="email" id="newsletter_signup" name="newsletter_signup" placeholder="Enter your email here" />
@@ -52,7 +52,7 @@
 		<!--//column-->
 
 		<section class="bottom">
-			<p class="copy">Copyright 2012 Book your travel ltd. All rights reserved</p>
+			<p class="copy">Copyright 2017 TravelSist All rights reserved</p>
 			<nav>
 				<ul>
 					<li><a href="#" title="About us">About us</a></li>

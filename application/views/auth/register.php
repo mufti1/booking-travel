@@ -13,6 +13,11 @@ Reference:
 http://www.bootstrapzen.com/item/135/simple-login-form-logo/
 */
 
+.btn-pink{
+  background-color: #E43D80;
+  color: white;
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -110,7 +115,8 @@ form[role=login] > div {
           }
           ?>
           <form method="post" action="<?php echo base_url('login/register_aksi/') ?>" role="login">
-            <img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" />
+            <img src="<?php echo base_url('assets/img/logo.png') ?>" class="img-responsive" alt="" />
+
             <input type="hidden" name="id_user" value="<?php echo $id; ?>">
             <input type="text" name="fullname" class="form-control input-lg" placeholder="Nama Lengkap">
             <input type="text" name="username" placeholder="username" class="form-control input-lg">
@@ -119,9 +125,9 @@ form[role=login] > div {
             <div class="pwstrength_viewport_progress"></div>
 
 
-            <button type="submit" name="submit" class="btn btn-lg btn-primary btn-block">Daftar</button>
+            <button type="submit" name="submit" class="btn btn-lg btn-pink btn-block">Daftar</button>
             <div>
-              <a href="#">Create account</a> or <a href="#">reset password</a>
+              <a href="<?php echo base_url('login') ?>" style="color: #E43D80">Sign In</a>
             </div>
 
           </form>

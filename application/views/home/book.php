@@ -1,6 +1,8 @@
 <?php if (!$this->session->userdata('id_user')) {
+	$url = $this->input->get('url');
+	$this->session->set_userdata('status', $url);
 	redirect('/Login','refresh');
-} ?>
+}else{$this->session->unset_userdata('status');} ?>
 
 <style>
 /* customer */
@@ -51,7 +53,9 @@
 			<nav role="navigation" class="breadcrumbs clearfix">
 				<!--crumbs-->
 				<ul class="crumbs">
-					<li><a href="#" title="Home">Home</a></li>                                     
+					<li><a href="<?php echo base_url() ?>" title="Home">Home</a></li> 
+					<li><a href="" title="Home">Search Result</a></li>   
+					<li><a href="" title="Home">Booking</a></li>                                     
 				</ul>
 				<!--//crumbs-->
 			</nav>
@@ -130,10 +134,10 @@
 
 						<div class="row">
 							<div class="f-item">
-								<label>Kebutuhan Khusus: <span>(Tidak Wajib)</span></label>
-								<textarea rows="10" cols="10" name="kebutuhan[]"></textarea>
+								<label>Nomor Identitas:</label>
+								<input type="text" name="identitas[]" required>
 							</div>
-							<span class="info">Tuliskan kebutuhan khususmu </span>
+							<span class="info">No KTP, SIM, atau kartu pelajar </span>
 						</div><br>
 						
 						<?php } ?>
@@ -180,7 +184,7 @@
 			<aside class="right-sidebar">
 				<!--Booking details-->
 				<article class="booking-details clearfix">
-					<h1>Best ipsum hotel <?php echo $book->rute_from. " Ke " . $book->rute_to ?> </h1>
+					<h1><?php echo $book->rute_from. " Ke " . $book->rute_to ?> </h1>
 					<div class="booking-info">
 						<h6>Berangkat</h6>
 						<p><?php echo "Pukul ". substr($book->depart_at, 11); ?></p>
@@ -202,9 +206,9 @@
 
 				<!--Need Help Booking?-->
 				<article class="default clearfix">
-					<h2>Need Help Booking?</h2>
-					<p>Call our customer services team on the number below to speak to one of our advisors who will help you with all of your holiday needs.</p>
-					<p class="number">1- 555 - 555 - 555</p>
+					<h2>Butuh bantuan untuk pemesanan?</h2>
+					<p>Silahkan hubungi customer service kami, customer service kami bekerja 24 jam dan di hari libur kami tetap melayani pelanggan</p>
+					<p class="number">0281-252002</p>
 				</article>
 				<!--//Need Help Booking?-->
 			</aside>

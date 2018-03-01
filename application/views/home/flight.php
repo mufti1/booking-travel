@@ -8,21 +8,21 @@
 					<h2>TravelSist</h2><br />
 					<p>Penerbangan pertama di Indonesia yang mengkhususkan penumpang perempuan</p>
 				</div>
-				<img class="main-image animate-in" src="<?php echo base_url('/assets/depan/'); ?>images/slider/img.jpg" alt="" />
+				<img class="main-image animate-in" src="<?php echo base_url('/assets/img/'.$banner->banner1); ?>" alt="" />
 			</li>
 			<li>
 				<div class="info animate-in">
 					<h2>TravelSist Diskon</h2><br />
 					<p>TravelSist sedang ada diskon besar besran buat seluruh armada</p>
 				</div>
-				<img class="main-image animate-in" src="<?php echo base_url('/assets/depan/'); ?>images/slider/img.jpg" alt="" />
+				<img class="main-image animate-in" src="<?php echo base_url('/assets/img/'.$banner->banner2); ?>" alt="" />
 			</li>
 			<li>
 				<div class="info animate-in">
 					<h2>Check out last minute flight, hotel &amp; vacation offers!</h2><br />
 					<p>Save up to 50%!</p>
 				</div>
-				<img class="main-image animate-in" src="<?php echo base_url('/assets/depan/'); ?>images/slider/img.jpg" alt="" />
+				<img class="main-image animate-in" src="<?php echo base_url('/assets/img/'.$banner->banner3); ?>" alt="" />
 			</li>
 		</ul>
 	</div>

@@ -37,7 +37,7 @@
       <!-- <h1>Dashboard</h1> -->
       <div class="row">
         <div class="col-sm-2 col-md-2">
-          <a href="<?php echo base_url('admin/index') ?>"><button type="button" class="btn btn-primary top_button"><span class="glyphicon glyphicon-plus"></span> </button></a>
+          <a href="<?php echo base_url('admin/customer_view') ?>"><button type="button" class="btn btn-primary top_button"><span class="glyphicon glyphicon-plus"></span> </button></a>
         </div>
       </div>
     </section>

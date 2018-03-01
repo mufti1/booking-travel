@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="<?php echo base_url('/assets/depan/'); ?>css/prettyPhoto.css" type="text/css" media="screen" />
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="<?php echo base_url('/assets/adminlte/'); ?>bower_components/font-awesome/css/font-awesome.min.css">
-	<link rel="shortcut icon" href="<?php echo base_url('/assets/depan/'); ?>images/favicon.ico" />
+	<link rel="shortcut icon" href="<?php echo base_url('/assets/depan/'); ?>images/favicon.png" />
 	<script type="text/javascript" src="<?php echo base_url('/assets/depan/'); ?>js/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url('/assets/depan/'); ?>js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url('/assets/depan/'); ?>js/css3-mediaqueries.js"></script>
@@ -39,7 +39,7 @@
 	<header>
 		<div class="wrap clearfix">
 			<!--logo-->
-			<h1 class="logo"><a href="<?php echo base_url(); ?>" title="TravelSist - beranda"><img src="<?php echo base_url('/assets/depan/'); ?>images/txt/logo.png" alt="Book Your Travel" /></a></h1>
+			<h1 class="logo"><a href="<?php echo base_url(); ?>" title="TravelSist - beranda"><img src="<?php echo base_url('/assets/depan/'); ?>images/themes/pink/txt/logo.png" alt="TravelSist" /></a></h1>
 			<!--//logo-->
 
 			<!--ribbon-->
@@ -60,27 +60,18 @@
 
 			<!--search-->
 			<div class="search">
-				<form id="search-form" method="get" action="search-form">
-					<input type="search" placeholder="Search entire site here" name="site_search" id="site_search" /> 
-					<input type="submit" id="submit-site-search" value="submit-site-search" name="submit-site-search"/>
-				</form>
+				
 			</div>
 			<!--//search-->
 
 			<!--contact-->
 			<div class="contact">
-				<span>24/7 Support number</span>
-				<span class="number">1- 555 - 555 - 555</span>
+				<span>Customer service</span>
+				<span class="number">0281-252002</span>
 			</div>
 			<!--//contact-->
 		</div>
 
-		<!--main navigation-->
-		<nav class="main-nav" role="navigation" id="nav">
-			<ul class="wrap">
-				<li class="active"><a href="flights.html" title="Flights">Flights</a></li>
-			</ul>
-		</nav>
-		<!--//main navigation-->
+		
 	</header>
 	<!--//header-->

@@ -20,6 +20,11 @@ http://www.bootstrapzen.com/item/135/simple-login-form-logo/
   outline: none;
 }
 
+.btn-pink{
+  background-color: #E43D80;
+  color: white;
+}
+
 .form-control {
   position: relative;
   font-size: 16px;
@@ -33,7 +38,7 @@ http://www.bootstrapzen.com/item/135/simple-login-form-logo/
 }
 
 body {
-  background: url(http://i.imgur.com/GHr12sH.jpg) no-repeat center center fixed;
+  background: #E43D80;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -83,18 +88,17 @@ form[role=login] > div {
     <div class="col-md-4">
       <section class="login-form">
         <form method="post" action="<?php echo base_url('login/auth') ?>" role="login">
-          <img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" />
+          <img src="<?php echo base_url('assets/img/logo.png') ?>" class="img-responsive" alt="" />
 
           <input type="text" name="username" placeholder="Masukan Username" class="form-control input-lg">
           
           <input type="password" name="password" class="form-control input-lg" id="password" placeholder="Password" required="" />
           
-          
           <div class="pwstrength_viewport_progress"></div>  
           
-          <button type="submit" name="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
+          <button type="submit" name="submit" class="btn btn-lg btn-pink btn-block">Sign in</button>
           <div>
-            <a href="<?php echo base_url('login/register'); ?>">Create account</a> or <a href="#">reset password</a>
+            <a href="<?php echo base_url('login/register'); ?>" style="color: #E43D80">Create account</a>
           </div>
           
         </form>

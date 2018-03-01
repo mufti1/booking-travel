@@ -16,6 +16,7 @@
 
 		public function index(){
 			$data['judul'] = "Home";
+			$data['banner'] = $this->Home_Model->banner();
 			$data['rute'] = $this->Home_Model->rute_from();
 			$data['rute_to'] = $this->Home_Model->rute_to();
 			$this->load->view('/template/depan_header',$data);
@@ -63,7 +64,7 @@
 			$data=array();
 			$this->Home_Model->send_payment();
 
-			redirect('/Home','refresh');
+			redirect('/Home/setting/'.$this->session->userdata('id_user'),'refresh');
 		}
 
 		//payment
@@ -116,9 +117,10 @@
 			$this->load->view('/template/depan_footer');
 		}
 
-		public function print_tiket($id_customer){
+		public function print_tiket(){
+			
 			$data['judul'] = "PRINT TIKET";
-			$data['reservation'] = $this->Home_Model->print_tiket($id_customer);
+			$data['reservation'] = $this->Home_Model->print_tiket();
 			
 			$this->load->view('/template/depan_header', $data);
 			$this->load->view('/home/tiket', $data);

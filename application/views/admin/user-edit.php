@@ -3,7 +3,7 @@
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 		<h1>
-			Dashboard
+			Edit User
 			<small>Control panel</small>
 		</h1>
 		<ol class="breadcrumb">
@@ -14,77 +14,50 @@
 	<section class="content">
 		<div class="box box-danger">
 			<div class="box-header">
-				<h3 class="box-title">Edit Rute</h3>
+				<h3 class="box-title">Edit User</h3>
 			</div>
 			<div class="box-body">
-				<form action="<?php echo base_url('rute/edit/'.$rute->id_rute) ?>" method="post" accept-charset="utf-8">
+				<form action="<?php echo base_url('user/edit/'.$user->id_user) ?>" method="post" accept-charset="utf-8">
 					<div class="form-group">
-						<label>Dari</label>
+						<label>Username</label>
 						<div class="input-group">
 							<div class="input-group-addon">
 								<i class="fa fa-user"></i>
 							</div>
-							<input name="rute_from" type="text" class="form-control" placeholder="Purwokerto(PWT)-Soedirman" value="<?php echo $rute->rute_from ?>">
+							<input name="username" type="text" class="form-control" placeholder="Masukan username" value="<?php echo $user->username ?>">
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label>Ke</label>
+						<label>Fullname</label>
 						<div class="input-group">
 							<div class="input-group-addon">
 								<i class="fa fa-user"></i>
 							</div>
-							<input name="rute_to" type="text" class="form-control" placeholder="Purwokerto(PWT)-Soedirman" value="<?php echo $rute->rute_to ?>">
+							<input name="fullname" type="text" class="form-control" placeholder="Masukan Nama Lengkap" value="<?php echo $user->fullname ?>">
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label>Harga:</label>
+						<label>Password</label>
 
 						<div class="input-group">
 							<div class="input-group-addon">
 								<i class="fa fa-phone"></i>
 							</div>
-							<input name="price" type="text" class="form-control" placeholder="200000" value="<?php echo $rute->price ?>">
+							<input name="password" type="password" class="form-control" placeholder="200000">
 						</div>
 						<!-- /.input group -->
 					</div>
 
 					<div class="form-group">
-						<label>Berangkat:</label>
+						<label>Level</label>
 
 						<div class="input-group date">
 							<div class="input-group-addon">
 								<i class="fa fa-calendar"></i>
 							</div>
-							<input type="text" name="depart_date" class="form-control pull-right" id="datepicker1" value="<?php echo $rute->depart_at ?>">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label>Sampai:</label>
-
-						<div class="input-group date">
-							<div class="input-group-addon">
-								<i class="fa fa-calendar"></i>
-							</div>
-							<input type="text" name="arrive_date" class="form-control pull-right" id="datepicker2" value="<?php echo $rute->arrival ?>">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label>Nama Armada</label>
-						<div class="input-group">
-							<div class="input-group-addon">
-								<i class="fa fa-user"></i>
-							</div>
-							<select name="id_transportation" class="form-control">
-								<option value="<?php echo $rute->id_transportation ?>"><?php echo $rute->armada ?></option>
-								option
-								<?php foreach ($trans as $data) {?>
-								<option value="<?php echo $data->id_transportation ?>"><?php echo $data->armada ?></option>
-								<?php } ?>
-							</select>
+							<input name="level" type="text" class="form-control" placeholder="200000" value="<?php echo $user->level ?>">
 						</div>
 					</div>
 					

@@ -10,6 +10,10 @@ class Rute extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Rute_Model');
+		$level = $this->session->userdata('level');
+		if ($level != "muftiganteng") {
+			redirect('/','refresh');
+		}
 	}
 	public function index(){
 		$data['judul'] = "Tambah Rute";

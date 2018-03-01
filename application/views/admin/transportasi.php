@@ -3,8 +3,8 @@
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 		<h1>
-			Rute
-			<small>Data Rute</small>
+			User
+			<small>Data User</small>
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -16,7 +16,7 @@
 			<div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-						<a href="<?php echo base_url('rute') ?>"><button type="button" class="btn btn-primary top_button"><span class="glyphicon glyphicon-plus"></span> </button></a>
+						<a href="<?php echo base_url('transportasi/tambah') ?>"><button type="button" class="btn btn-primary top_button"><span class="glyphicon glyphicon-plus"></span> </button></a>
 					</div>
 					<!-- /.box-header -->
 					<div class="box-body">
@@ -30,28 +30,22 @@
 						<table id="example1" class="table table-bordered table-hover table-striped dataTable" role="grid" aria-describedby="example1_info">
 							<thead>
 								<tr>
-									<th>Id Rute</th>
-									<th>Berangkat</th>
-									<th>Dari</th>
-									<th>Ke</th>
-									<th>Sampai</th>
-									<th>Harga</th>
-									<th>Id Transportasi</th>
+									<th>Id User</th>
+									<th>Username</th>
+									<th>Fullname</th>
+									<th>Level</th>
 									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody>
 								
-								<?php foreach ($rute as $data) { ?>
+								<?php foreach ($transportasi as $data) { ?>
 								<tr>
-									<td><?php echo $data->id_rute ?></td>
-									<td><?php echo $data->depart_at ?></td>
-									<td><?php echo $data->rute_from ?></td>
-									<td><?php echo $data->rute_to ?></td>
-									<td><?php echo $data->arrival ?></td>
-									<td><?php echo $data->price ?></td>
 									<td><?php echo $data->id_transportation ?></td>
-									<td><a href="<?php echo base_url('rute/view_edit/'.$data->id_rute) ?>" class="btn btn-primary btn-xs">Edit</a> <a href="<?php echo base_url('rute/hapus/'.$data->id_rute) ?>" class="btn btn-danger btn-xs">Hapus</a></td>
+									<td><?php echo $data->code ?></td>
+									<td><?php echo $data->armada ?></td>
+									<td><?php echo $data->seat_qty ?></td>
+									<td><a href="<?php echo base_url('transportasi/view_edit/'.$data->id_transportation) ?>" class="btn btn-primary btn-xs">Edit</a> <a href="<?php echo base_url('transportasi/hapus/'.$data->id_transportation) ?>" class="btn btn-danger btn-xs">Hapus</a></td>
 									
 								</tr>
 								<?php } ?>

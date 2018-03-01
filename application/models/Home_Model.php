@@ -18,6 +18,11 @@
 			return $this->db->get()->result();
 		}
 
+		function banner(){
+			$this->db->order_by('id_banner', 'desc');
+			return $this->db->get('banner', 1)->row();
+		}
+
 		function cari(){
 			$this->db->select('*');
 			$this->db->from('rute');
@@ -33,6 +38,7 @@
 			$this->db->from('rute');
 			$this->db->where('rute_from', $this->input->get('rute_from'));
 			$this->db->where('rute_to', $this->input->get('rute_to'));
+			$this->db->where('status', 2);
 			$this->db->like('reservation.depart_at', $this->input->get('depart_at'));
 			$this->db->join('reservation', 'rute.id_rute = reservation.id_rute');
 			return $this->db->get()->row();
@@ -78,6 +84,7 @@
 			$this->db->select('seat_code');
 			$this->db->from('reservation');
 			$this->db->where('id_rute',  $this->input->get('id_rute'));
+			$this->db->where('status', 2);
 			return $this->db->get()->result();
 		}
 
@@ -106,7 +113,7 @@
 					'address' => $this->input->post('address['.$i.']'),
 					'phone' => $this->input->post('phone['.$i.']'),
 					'gender' => $this->input->post('gender['.$i.']'),
-					'kebutuhan' => $this->input->post('kebutuhan['.$i.']')
+					'no_identitas' => $this->input->post('identitas['.$i.']')
 				);
 
 				$this->db->insert('customer', $cust);
@@ -134,7 +141,8 @@
 			}
 		}
 
-		function print_tiket($id_customer){
+		function print_tiket(){
+			$id_customer = $this->input->post('cust');
 			$this->db->select('*');
 			$this->db->from('reservation');
 			$this->db->where('customer.id_customer', $id_customer);

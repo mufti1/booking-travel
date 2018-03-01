@@ -26,12 +26,20 @@ class Login extends CI_Controller {
 	}
 	public function index()
 	{
+		$username = $this->session->userdata('username');
+		if ($username) {
+			redirect('/','refresh');
+		}
 		$this->load->view('/template/header');
 		$this->load->view('auth/login');
 		$this->load->view('/template/footer');
 	}
 
 	public function register(){
+		$username = $this->session->userdata('username');
+		if ($username) {
+			redirect('/','refresh');
+		}
 		$data['user'] = $this->Login_Model->kode();
 		$this->load->view('/template/header');
 		$this->load->view('auth/register',$data);
@@ -64,24 +72,42 @@ class Login extends CI_Controller {
 			'username' => $this->input->post('username'),
 			'password' => md5($this->input->post('password'))
 		);
-
+		$status = $this->session->userdata('status');
+		// echo($status);
 		$data=$this->Login_Model->login_user($data_login['username'], $data_login['password']);
 
-		if ($data) {
-			$lv = $data['level'];
-			$this->session->set_userdata('id_user', $data['id_user']);
-			$this->session->set_userdata('username', $data['username']);
-			$this->session->set_userdata('level', $data['level']);
-			if ($lv = 'muftiganteng') {
-				
-				redirect('admin');
-			}elseif($lv = '1'){
-				redirect('/','refresh');
+		if ($status) {
+			if ($data) {
+				$lv = $data['level'];
+				$this->session->set_userdata('id_user', $data['id_user']);
+				$this->session->set_userdata('username', $data['username']);
+				$this->session->set_userdata('level', $data['level']);
+				if($lv = '1'){
+					redirect($status,'refresh');
+				}
+			}
+			else{
+				echo("error");
 			}
 		}
 		else{
-			echo("error");
+			if ($data) {
+				$lv = $data['level'];
+				$this->session->set_userdata('id_user', $data['id_user']);
+				$this->session->set_userdata('username', $data['username']);
+				$this->session->set_userdata('level', $data['level']);
+				if ($lv = 'muftiganteng') {
+
+					redirect('admin');
+				}elseif($lv = '1'){
+					redirect('/','refresh');
+				}
+			}
+			else{
+				echo("error");
+			}
 		}
+		
 	}
 
 	public function logout(){

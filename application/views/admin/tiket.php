@@ -1,9 +1,3 @@
-<?php 
-$level = $this->session->userdata('level');
-if ($level != "muftiganteng") {
-	redirect('/','refresh');
-}
-?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
@@ -36,7 +30,7 @@ if ($level != "muftiganteng") {
 									<th>Jam Pesan</th>
 									<th>Price</th>
 									<th>Nama</th>
-									<th>Id Customer</th>
+									<th>No Identitas</th>
 									<th>Action</th>
 								</tr>
 							</thead>
@@ -50,7 +44,7 @@ if ($level != "muftiganteng") {
 									<td><?php echo $data->reservation_at ?></td>
 									<td><?php echo $data->price ?></td>
 									<td><?php echo $data->name ?></td>
-									<td><?php echo $data->id_customer ?></td>
+									<td><?php echo $data->no_identitas ?></td>
 									<td><a href="<?php echo base_url('Admin/terima/'.$data->reservation_code); ?>" class="btn btn-primary">Terima</a>  <a href="<?php echo base_url('Admin/batal/'.$data->reservation_code); ?>" class="btn btn-danger">Batal</a></td>
 								</tr>
 								<?php } ?>

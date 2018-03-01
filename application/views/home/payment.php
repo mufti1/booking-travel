@@ -7,18 +7,16 @@
 			<nav role="navigation" class="breadcrumbs clearfix">
 				<!--crumbs-->
 				<ul class="crumbs">
-					<li><a href="#" title="Home">Home</a></li>
-					<li><a href="#" title="Hotels">Hotels</a></li>
-					<li><a href="#" title="United Kingdom">United Kingdom</a></li>
-					<li><a href="#" title="London">London</a></li>  
-					<li>Best ipsum hotel</li>                                       
+					<li><a href="<?php echo base_url() ?>" title="Home">Home</a></li>
+					<li><a href="#" title="Hotels">Search Result</a></li>
+					<li><a href="#" title="United Kingdom">Booking</a></li>
+					<li><a href="#" title="London">Payment</a></li>                                      
 				</ul>
 				<!--//crumbs-->
 				
 				<!--top right navigation-->
 				<ul class="top-right-nav">
-					<li><a href="#" title="Back to results">Back to results</a></li>
-					<li><a href="#" title="Change search">Change search</a></li>
+					<li><a href="<?php echo base_url() ?>" title="Change search">Change search</a></li>
 				</ul>
 				<!--//top right navigation-->
 			</nav>
@@ -60,8 +58,8 @@
 
 						<div class="row">
 							<div class="f-item checkbox">
-								<input type="checkbox" name="check" id="check" value="ch1" />
-								<label>Yes, I have read and I agree to the <a href="#">booking conditions</a>.</label>
+								<input type="checkbox" name="check" id="check" value="ch1" required />
+								<label>Ya saya memahami dengan, <a href="#">kebijakan travelsist</a>.</label>
 							</div>
 						</div>
 						<hr />
@@ -75,7 +73,7 @@
 			<aside class="right-sidebar">
 				<!--Booking details-->
 				<article class="booking-details clearfix">
-					<h1>Best ipsum hotel <?php echo $payment->rute_from. " Ke " . $payment->rute_to ?> </h1>
+					<h1><?php echo $payment->rute_from. " Ke " . $payment->rute_to ?> </h1>
 					<div class="booking-info">
 						<h6>Berangkat</h6>
 						<p><?php echo "Pukul ". substr($payment->depart_at, 11); ?></p>
@@ -93,9 +91,9 @@
 				
 				<!--Need Help Booking?-->
 				<article class="default clearfix">
-					<h2>Need Help Booking?</h2>
-					<p>Call our customer services team on the number below to speak to one of our advisors who will help you with all of your holiday needs.</p>
-					<p class="number">1- 555 - 555 - 555</p>
+					<h2>Butuh bantuan untuk pemesanan?</h2>
+					<p>Silahkan hubungi customer service kami, customer service kami bekerja 24 jam dan di hari libur kami tetap melayani pelanggan</p>
+					<p class="number">0281-252002</p>
 				</article>
 				<!--//Need Help Booking?-->
 			</aside>
